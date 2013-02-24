@@ -1,0 +1,1 @@
+run ./scripts/web-server.js (Linux or node scripts\web-server.js on Windows) to strat the Node.js server and go to http://localhost:8000/app/index.html to see the initial page;
