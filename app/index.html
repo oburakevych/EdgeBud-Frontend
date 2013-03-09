@@ -1,7 +1,7 @@
 <!doctype html>
-<html ng-app="resilienceApp">
+<html ng-app="edgeBudApp">
 <head>
-	<title>Resilience</title>
+	<title>EdgeBud</title>
 
 	<meta charset="utf-8">
 	<!-- Development mode meta tags. Remove in Production -->
@@ -10,32 +10,27 @@
 	<meta http-equiv="Expires" content="-1"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet/less" type="text/css" href="css/issue.less">
-	<link rel="stylesheet/less" type="text/css" href="css/mapview.less">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+	
+	<link rel="stylesheet/less" type="text/css" href="css/utils.less">
+	<link rel="stylesheet/less" type="text/css" href="css/project.less">
 	
 </head>
 <body>
 	<div ng-view></div>
-	<div>
-		<a href="#/issues">Show List</a>
-		<a href="#/map">Show Map</a>
-		<a href="#/view">Combined view</a>
-	</div>
 </body>
-	<!-- Use new version 1.1.1 from CDN when released
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-resource.js"></script>
-	-->
+	<!-- Use new version 1.1.1 from CDN when released-->
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/json2.js"></script>
+	<script type="text/javascript" src="lib/pretty.js"></script>
 	<script type="text/javascript" src="lib/angular.min.js"></script>
 	<script type="text/javascript" src="lib/angular-resource.js"></script>
-	<script type="text/javascript" src="lib/pretty.js"></script>
+	<script type="text/javascript" src="lib/bootstrap.js"></script>
 	<script type="text/javascript" src="lib/less.min.js"></script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGhHhG5mqahPfCb6IXJhbQgGRLi_7sbgo&sensor=true"></script>
-	<script type="text/javascript" src="lib/json2.js"></script>
-
+	
 	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/eb-project-module.js"></script>
 	<script type="text/javascript" src="js/controllers.js"></script>
-	<script type="text/javascript" src="js/issueService.js"></script>
 	<script type="text/javascript" src="js/filters.js"></script>
-	<script type="text/javascript" src="js/mapService.js"></script>
 </html>

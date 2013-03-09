@@ -1,0 +1,12 @@
+<div ng-controller="ProjectController" class="eb_add_project">
+	<h1>Add New Project</h1>
+	<p><label for='projectId'>Project ID:</label><input id='projectId' type='text' ng-model='newProject.id' required></p>
+	<p><label for='projectName'>Project Name:</label><input id='projectName' type='text' ng-model='newProject.name' required ng-max-length='20'></p>
+	<p><label for='projectDesc'>Project Description:</label><input id='projectDesc' type='text' ng-model='newProject.description'></p>
+	<p><label for='projectImageName'>Project Image URL:</label><input id='projectImageName' type='text' ng-model='newProject.imageName'></p>
+	<p><label for='projectVideoName'>Project Video URL:</label><input id='projectVideoName' type='text' ng-model='newProject.videoName'></p>
+	
+	<hr>
+	<input type="button" value="Create" ng-click='addProject()'></input>
+	<input type="button" value="Clear" ng-click='clear()'></input>
+</div>

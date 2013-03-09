@@ -1,0 +1,10 @@
+<div class="container">
+	<h1>Projects List</h1>
+	<div ng-controller="ProjectsController">
+		<ul class="row" ng-repeat="rows in projectRows">
+			<li class="span4" ng-repeat="project in rows">
+				<eb-project eb-name="{{project.name}}" eb-id="{{project.id}}" eb-description="{{project.description}}"/>
+			</li>
+		</ul>
+	</div>
+</div>

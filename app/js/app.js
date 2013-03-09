@@ -1,14 +1,14 @@
 'use strict';
 
-/* Resilience App Module */
+/* EdgeBud App Module */
 
-var resilienceModule = angular.module('resilienceApp', ['issueApp', 'filterApp', 'mapApp']);
+var edgeBudModule = angular.module('edgeBudApp', ['ebProjectModule', 'filterModule']);
 
-resilienceModule.config(['$routeProvider', function($routeProvider) {
+edgeBudModule.BASE_URL = 'http://localhost:8680/edgebud';
+
+edgeBudModule.config(['$routeProvider', function($routeProvider) {
 	  $routeProvider.
-	  	  when('/view', {templateUrl: 'views/combined_view.html'}).
-	      when('/issues', {templateUrl: 'views/issue_list_view.html', controller: IssueListController}).
-	      when('/issues/:issueId', {templateUrl: 'views/issue.html', controller: IssueController}).
-	      when('/map', {templateUrl: 'views/map_view.html', controller: MapController}).
-	      otherwise({redirectTo: '/'});
+	  	  when('/projects', {templateUrl: 'views/projects.html'}).
+	  	  when('/projects/new', {templateUrl: 'views/add-project.html', controller: "ProjectController"}).
+	      otherwise({redirectTo: '/projects'});
 	}]);
