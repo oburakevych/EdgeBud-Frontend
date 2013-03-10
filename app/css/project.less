@@ -1,7 +1,85 @@
 @import "utils.less";
 
 .eb_project {
-	border: solid black 1px;
+	.content {
+		height: 520px;
+		background-color: rgba(0, 0, 0, 0.015);
+	}
+	
+	.body {
+		height: 430px;
+		overflow: hidden;
+	}
+	
+	.footer {
+	    -moz-user-select: none;
+	    background-color: #63A239;
+	    border: 5px double #FFFFFF;
+	    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+	    cursor: default;
+	    display: block;
+	    padding: 8px;
+	    margin-left: 0;
+	    position: relative;
+	    text-align: center;
+	    bottom: 0px;
+	    left: -12px;
+	    width: 100%;
+	    color: white;
+	}
+	
+	.PENDING {
+		background-color: #F6BC2A;
+	}
+	
+	.ACTIVE {
+		background-color: #63A239;
+	}
+	
+	.INACTIVE {
+		background-color: #BF0000;
+	}
+	
+	.ribbon {
+		height: 100px;
+	    margin: 0 !important;
+	    overflow: hidden;
+	    //position: absolute !important;
+	    //right: 0;
+	    //top: 0;
+	    width: 100px;
+	    
+	    &.status-green {
+	    	//background-color: #63A239;
+	    	
+	        ._outer {
+			    -moz-user-select: none;
+			    background-color: #63A239;
+			    border: 5px double #FFFFFF;
+			    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+			    cursor: default;
+			    display: block;
+			    //left: 36px;
+			    padding: 10px;
+			    //position: absolute;
+			    text-align: center;
+			    //top: -81px;
+			    transform: rotate(-45deg);
+			    transform-origin: 0 0 0;
+			    width: 141px;
+		    }
+		    
+		    ._inner {
+				color: #FFFFFF;
+			    font-family: "Adelle Bold",Georgia,serif;
+			    font-size: 18px;
+			    font-size-adjust: 0.523;
+			    font-weight: bold;
+			    text-transform: uppercase;
+			    white-space: nowrap;
+		    }
+	    }
+	}
 }
 
 .eb_add_project {

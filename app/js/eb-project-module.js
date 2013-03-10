@@ -6,12 +6,18 @@ projectModule.directive('ebProject', function() {
 		scope: {
 			id: '@ebId',
 			name: '@ebName',
-			description: '@ebDescription'
+			description: '@ebDescription',
+			imageName: '@ebImageName',
+			companyName: '@ebCompanyName',
+			status: "@ebStatus"
+		},
+		link: function(scope, elm, attrs) {
+			// TODO
 		},
 		templateUrl: 'views/project.html'
 	};
 });
 
 projectModule.factory('ProjectResource', function($resource) {
-	return $resource('http://127.0.0.1:8680/edgebud/projects');
+	return $resource(edgeBudModule.BASE_URL + 'projects');
 });

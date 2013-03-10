@@ -18,7 +18,19 @@
 	
 </head>
 <body>
-	<div ng-view></div>
+	<div class="container">
+    	<div class="row">
+    		<div class="span1">
+    			<!--Left Sidebar content-->
+    		</div>
+    		<div ng-view class="span9">
+				<!-- Body content -->
+    		</div>
+    		<div class="span2">
+    			<!--Right Sidebar content-->
+    		</div>
+    	</div>
+    </div>
 </body>
 	<!-- Use new version 1.1.1 from CDN when released-->
 	<script type="text/javascript" src="lib/jquery.min.js"></script>

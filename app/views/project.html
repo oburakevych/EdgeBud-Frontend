@@ -1,5 +1,19 @@
 <div ng-controller="ProjectController" class="eb_project">
-	<p>{{id}}</p>
-	<p>{{name}}</p>
-	<p>{{description}}</p>
+	<ul class="thumbnails">
+		<li class="span3">
+			<div class="thumbnail content">
+				<div class="body">
+					<img ng-src="{{getImageSrc()}}" alt="project image">
+					<h4>{{name}}</h4>
+					<p class="description">{{description}}</p>
+					<p><i class="icon-briefcase"></i><em>&nbsp;{{companyName}}</em></p>
+				</div>
+				
+				<div class="footer {{status}}">
+					{{status}}
+				</div>
+			</div>
+
+		</li>
+	</ul>
 </div>

@@ -4,7 +4,7 @@
 
 var edgeBudModule = angular.module('edgeBudApp', ['ebProjectModule', 'filterModule']);
 
-edgeBudModule.BASE_URL = 'http://localhost:8680/edgebud';
+edgeBudModule.BASE_URL = 'http://localhost\\:8680/edgebud/';
 
 edgeBudModule.config(['$routeProvider', function($routeProvider) {
 	  $routeProvider.
