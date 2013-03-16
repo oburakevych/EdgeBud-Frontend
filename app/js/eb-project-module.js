@@ -1,23 +1,15 @@
 var projectModule = angular.module('ebProjectModule', ['ngResource']);
 
-projectModule.directive('ebProject', function() {
+projectModule.directive('ebProjectCard', function() {
 	return {
 		restrict: 'A, E',
 		scope: {
-			/*id: '@ebId',
-			name: '@ebName',
-			description: '@ebDescription',
-			imageName: '@ebImageName',
-			companyName: '@ebCompanyName',
-			status: "@ebStatus",
-			opportunities: "=ebOpportunities"
-			*/
 			project: "&ebObject"
 		},
 		link: function(scope, elm, attrs) {
 			scope.project = scope.project();
 		},
-		templateUrl: 'views/project.html'
+		templateUrl: 'views/project-card.html'
 	};
 });
 
