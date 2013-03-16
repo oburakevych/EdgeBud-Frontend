@@ -7,6 +7,8 @@
 	<p><label for='projectImageName'>Project Image URL:</label><input id='projectImageName' type='text' ng-model='newProject.imageName'></p>
 	<p><label for='projectVideoName'>Project Video URL:</label><input id='projectVideoName' type='text' ng-model='newProject.videoName'></p>
 	
+	<p><label for='projectVideoName'>List Opportunities:</label><input id='projectOpport' type='text' ng-list ng-model='opportunities'></p>
+	
 	<hr>
 	<input type="button" value="Create" ng-click='addProject()'></input>
 	<input type="button" value="Clear" ng-click='clear()'></input>

@@ -4,12 +4,15 @@
 			<div class="thumbnail content">
 				<div class="body">
 					<a href="#"><img ng-src="{{getImageSrc()}}" alt="project image"></a>
-					<h4><a href="#">{{name}}</a></h4>
-					<p class="description">{{description}}</p>
-					<p><i class="icon-briefcase"></i><em>&nbsp;{{companyName}}</em></p>
+					<h4><a href="#">{{project.name}}</a></h4>
+					<p class="description">{{project.description}}</p>
+					<p><i class="icon-briefcase"></i><em>&nbsp;{{project.company.name}}</em></p>
+					<ul class="opportunities">Available opportunities:
+						<li ng-repeat="opportunity in project.opportunities">{{opportunity.name}}</li>
+					</ul>
 				</div>
 				
-				<div class="footer {{status}}">
+				<div class="footer {{project.status}}">
 					Ends in 8 days
 				</div>
 				<div class="tags">

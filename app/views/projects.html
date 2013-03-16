@@ -6,10 +6,14 @@
 	</div>
 	<div class="row" ng-repeat="rows in projectRows">
 		<div class="span3" ng-repeat="project in rows | filter: projectQuery">
+			<!-- 
 			<eb-project 
 				eb-name="{{project.name}}" eb-id="{{project.id}}" eb-description="{{project.description}}"
 				eb-image-name="{{project.imageName}}" eb-company-name="{{project.company.name}}"
 				eb-status="{{project.status}}"/>
+				
+			 -->
+			 <eb-project eb-object="rows[$index]"/>
 		</div>
 	</div>
 	<div class="load_more text-center">

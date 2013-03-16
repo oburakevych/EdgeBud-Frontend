@@ -48,6 +48,14 @@ function ProjectController($scope, ProjectResource, $http) {
 				id: "12345",
 				name: 'A really cool one'
 		}
+		
+		if ($scope.opportunities) {
+			$scope.newProject.opportunities = [];
+			angular.forEach($scope.opportunities, function(opportunity, index) {
+				$scope.newProject.opportunities.push({id: '' + $scope.newProject.id + '' + index, name: opportunity});	
+			});
+		}
+		
 		ProjectResource.save($scope.newProject);
 	}
 	
@@ -56,10 +64,10 @@ function ProjectController($scope, ProjectResource, $http) {
 	}
 	
 	$scope.getImageSrc = function() {
-		if (!$scope.imageName) {
+		if (!$scope.project.imageName) {
 			return "/app/img/photo-main-default.jpg";
 		} else {
-			return "/app/img/" + $scope.id + "/photo-main.jpg";
+			return "/app/img/" + $scope.project.id + "/photo-main.jpg";
 		}
 	}
 }
