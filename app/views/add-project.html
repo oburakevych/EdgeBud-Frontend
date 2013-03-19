@@ -1,5 +1,23 @@
 <div ng-controller="ProjectController" class="eb_add_project">
-	<h1>Add New Project</h1>
+	<h2>Company</h2>
+	<select ng-model = "newProject.company" ng-options="c.name for c in companies"></select>
+	<p><input id='companyName' type='text' placeholder="Company Name" ng-model='newProject.company.name' required></p>
+	<p><input id='companyEmail' type='email' placeholder="E-mail" ng-model='newProject.company.email'></p>
+	<p ng-repeat = "figure in newProject.company.figures">
+		<label for='companyFigureKey{{$index}}'>Figure:</label>
+		<input id='companyFigureKey{{$index}}' type='text' placeholder="Key figure..." ng-model='figure.key'  required>
+		<input id='companyFigureVal{{$index}}' type='text' placeholder="Value" ng-model='figure.value' required>
+		<input id='companyFigureType{{$index}}' type='text' placeholder="Type" class="input-small" ng-model='figure.type' >
+		<input id='companyFigurePrior{{$index}}' type='number' placeholder="Priority (order)" class="input-small" ng-model='figure.priority'>
+	</p>
+	<p><input type="button" value = "Add a figure" ng-click="addFigure()"></p>
+	<input type="button" value="Clear" ng-click='newProject.company = {}'></input>
+	<input type="button" value="Add" ng-click='addCompany()'></input>
+	<input type="button" value="Delete" ng-click='deleteCompany()'></input>
+	
+	
+	<hr>
+	<h2>Project</h2>
 	<p><label for='projectId'>Project ID:</label><input id='projectId' type='text' ng-model='newProject.id' required></p>
 	<p><label for='projectName'>Project Name:</label><input id='projectName' type='text' ng-model='newProject.name' required ng-max-length='20'></p>
 	<p><label for='projectDesc'>Project Description:</label><input id='projectDesc' type='text' ng-model='newProject.description'></p>
@@ -7,7 +25,7 @@
 	<p><label for='projectImageName'>Project Image URL:</label><input id='projectImageName' type='text' ng-model='newProject.imageName'></p>
 	<p><label for='projectVideoName'>Project Video URL:</label><input id='projectVideoName' type='text' ng-model='newProject.videoName'></p>
 	
-	<p><label for='projectVideoName'>List Opportunities:</label><input id='projectOpport' type='text' ng-list ng-model='opportunities'></p>
+	<p><label for='projectOpport'>List Opportunities:</label><input id='projectOpport' type='text' ng-list ng-model='opportunities'></p>
 	
 	<hr>
 	<input type="button" value="Create" ng-click='addProject()'></input>

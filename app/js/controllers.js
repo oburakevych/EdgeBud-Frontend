@@ -35,8 +35,33 @@ function ProjectsController($scope, ProjectResource) {
 	});
 }
 
-function ProjectController($scope, ProjectResource, $http) {
-	$scope.newProject = {};
+function ProjectController($scope, ProjectResource, CopmaniesResource) {
+	$scope.newProject = {
+			company: {
+				id: "" + Math.random(),
+				figures: []
+			}
+	};
+	
+	$scope.getCompanies = function() {
+		$scope.companies = CopmaniesResource.query();
+	}
+	
+	$scope.addCompany = function() {
+		if ($scope.newProject.company.$update) {
+			$scope.newProject.company.$update();
+		} else {
+			CopmaniesResource.save($scope.newProject.company, $scope.getCompanies);	
+		}
+	}
+	
+	$scope.deleteCompany = function() {
+		if ($scope.newProject.company.$delete) {
+			$scope.newProject.company.$delete();	
+		}
+	}
+	
+	
 	
 	$scope.addProject = function() {
 		if (!$scope.newProject.status) {
@@ -44,9 +69,9 @@ function ProjectController($scope, ProjectResource, $http) {
 		}
 		
 		angular.uppercase($scope.newProject.status);
-		$scope.newProject.company = {
-				id: "12345",
-				name: 'A really cool one'
+		
+		if (!$scope.newProject.company.id) {
+			$scope.newProject.company.id = "" + Math.random();
 		}
 		
 		if ($scope.opportunities) {
@@ -60,7 +85,18 @@ function ProjectController($scope, ProjectResource, $http) {
 	}
 	
 	$scope.clear = function() {
-		$scope.newProject = {};	
+		$scope.newProject = {
+				company: {
+					figures: []
+				}
+		};	
+	}
+	
+	$scope.addFigure = function() {
+		if (!$scope.newProject.company.figures) {
+			$scope.newProject.company.figures = [];
+		}
+		$scope.newProject.company.figures.push({id: "" + Math.random()});
 	}
 	
 	$scope.getImageSrc = function() {
@@ -70,4 +106,11 @@ function ProjectController($scope, ProjectResource, $http) {
 			return "/app/img/" + $scope.project.id + "/photo-main.jpg";
 		}
 	}
+	
+	$scope.getCompanies();
+}
+	
+function ProjectDetailsController($scope, $routeParams, ProjectResource) {
+	$scope.project = ProjectResource.get({id: $routeParams.id});
+
 }

@@ -1,9 +1,9 @@
-<div ng-controller="ProjectController" class="eb_project">
+<div ng-controller="ProjectDetailsController" class="eb_project">
 	<ul class="thumbnails">
-		<li class="span3">
+		<li class="span9">
 			<div class="thumbnail content">
 				<div class="body">
-					<a href="#projects/{{project.id}}"><img ng-src="{{getImageSrc()}}" alt="project image"></a>
+					<img ng-src="/app/img/{{project.id}}/photo-main.jpg" alt="project image">
 					<h4><a href="#projects/{{project.id}}">{{project.name}}</a></h4>
 					<p class="description">{{project.description}}</p>
 					<p><i class="icon-briefcase"></i><em>&nbsp;{{project.company.name}}</em></p>
