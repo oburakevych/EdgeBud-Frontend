@@ -1,0 +1,218 @@
+[ { "company" : {
+      "description" : null,
+      "email" : "me@attlassian.com",
+      "id" : "0.1369681325179547",
+      "id_" : 8,
+      "name" : "Igtimi",
+      "url" : null,
+      "version" : 0,
+      "location" : "Dunedin, NZ"
+    },
+    "project_detail" : {
+      "name" : "Attlassian Bang",
+      "title" : "Help an America’s Cup Supplier of Connected Objects to Reach More Profitable Industrial Markets",
+      "description" : "An interactive film following a student who gets stuck in Slender Crucis's quiet Cotswold Village.. Where would you run to?", 
+      "videoName" : "attlassian1.avi",
+      "imageName" : "attlassian1.png",
+      "key_metrics" :[
+        {
+          "label":"2012 REVENUES",
+          "data":"3 M$"
+        },
+        {
+          "label":"KEY ASSET",
+          "data":"Multi-Use Device"
+        },
+        {
+          "label":"TOP CLIENT",
+          "data":"America's CUP"
+        }
+      ]
+    },
+    "rewards":[
+      {
+        "btn_type":"btn-info",
+        "unit":"$",
+        "figure":"1800",
+        "text":"for grabs",
+        "icon":"icon-star icon-white"
+      },
+      {
+        "btn_type":"",
+        "unit":"",
+        "figure":"3",
+        "text":"branch openings",
+        "icon":"icon-map-marker"
+      }
+    ],
+    "challenges" : [
+      { "description" : "Igtimi doesn't how to grow into different industries",
+        "icon":"tools.png",
+        "id" : "10",
+        "id_" : 6,
+        "name" : "Create Branch",
+        "value" : null,
+        "version" : 0,
+        "top_tasks":[
+          {
+            "type":"top",
+            "name":"Recommend a local partner",
+            "contributors":24
+          },
+          {
+            "type":"top",
+            "name":"Share market insight on your industry",
+            "contributors":5
+          }
+        ],
+        "more_tasks":[]
+      },
+      { "description" : "Igtimi needs you to expand at the international level",
+        "icon":"network.png",
+        "id" : "10",
+        "id_" : 6,
+        "name" : "Create Branch",
+        "value" : null,
+        "version" : 0,
+        "top_tasks":[
+          {
+            "type":"top",
+            "name":"Apply to become a local partner",
+            "contributors":3
+          }
+        ],
+        "more_tasks":[
+          {
+            "type":"additional",
+            "name":"blablabla",
+            "contributors":16
+          }
+        ]
+      }
+    ],
+    "created" : 1363753071919,    
+    "endDate" : 1363753071919,
+    "id" : "1",
+    "id_" : 5,
+    "startDate" : 1363753071919,
+    "status" : "ACTIVE",
+    "version" : 1
+  },
+  { "company" : {
+      "description" : null,
+      "email" : "me@attlassian.com",
+      "id" : "0.1369681325179547",
+      "id_" : 8,
+      "name" : "Carabara",
+      "url" : null,
+      "version" : 0,
+      "location" : "Dunedin, NZ"
+    },
+    "project_detail" : {
+      "name" : "Attlassian Bang",
+      "title" : "Help an America’s Cup Supplier of Connected Objects to Reach",
+      "description" : "Very very exciting ! An interactive film following a student who gets stuck in Slender Crucis's quiet Cotswold Village.. Where would you run to?", 
+      "videoName" : "attlassian1.avi",
+      "imageName" : "attlassian1.png",
+      "key_metrics" :[
+        {
+          "label":"2012 REVENUES",
+          "data":"3 M$"
+        },
+        {
+          "label":"KEY ASSET",
+          "data":"Multi-Use Device"
+        },
+        {
+          "label":"TOP CLIENT",
+          "data":"America's CUP"
+        },
+        {
+          "label":"TOP CLIENT",
+          "data":"America's CUP"
+        }
+      ]
+    },
+    "rewards":[
+      {
+        "btn_type":"btn-warning",
+        "unit":"",
+        "figure":"FREE",
+        "text":"innovation",
+        "icon":"icon-star icon-white"
+      },
+      {
+        "btn_type":"",
+        "unit":"",
+        "figure":"∞",
+        "text":"branch openings !",
+        "icon":"icon-map-marker"
+      },
+      {
+        "btn_type":"btn-success",
+        "unit":"",
+        "figure":"40",
+        "text":"tints",
+        "icon":"icon-tint icon-white"
+      }
+    ],
+    "challenges" : [
+      { "description" : "More people need to know about this methodology",
+        "icon":"audience.png",
+        "id" : "10",
+        "id_" : 6,
+        "name" : "Create Branch",
+        "value" : null,
+        "version" : 0,
+        "top_tasks":[
+          {
+            "type":"top",
+            "name":"Share on social networks",
+            "contributors":1355
+          }
+        ],
+        "more_tasks":[]
+      },
+      { "description" : "Create a local retail for free",
+        "icon":"bonzai.png",
+        "id" : "10",
+        "id_" : 6,
+        "name" : "Create Branch",
+        "value" : null,
+        "version" : 0,
+        "top_tasks":[
+          {
+            "type":"top",
+            "name":"Apply to receive the franchise package",
+            "contributors":3
+          }
+        ],
+        "more_tasks":[]
+      },
+      { "description" : "Recommend similar technologies",
+        "icon":"gears.png",
+        "id" : "10",
+        "id_" : 6,
+        "name" : "Create Branch",
+        "value" : null,
+        "version" : 0,
+        "top_tasks":[
+        ],
+        "more_tasks":[
+          {
+            "type":"additional",
+            "name":"blablabla",
+            "contributors":16
+          }
+        ]
+      }
+    ],
+    "created" : 1363753071919,    
+    "endDate" : 1363753071919,
+    "id" : "1",
+    "id_" : 5,
+    "startDate" : 1363753071919,
+    "status" : "ACTIVE",
+    "version" : 1
+  }
+]

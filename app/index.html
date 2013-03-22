@@ -10,7 +10,7 @@
 	<meta http-equiv="Expires" content="-1"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
 	
 	<link rel="stylesheet/less" type="text/css" href="css/utils.less">
@@ -20,15 +20,32 @@
 </head>
 <body>
 	<!-- <div id="header" ng-include src="'/app/views/header.html'" ></div>  -->
+	<header class="header">
+		<div class="row">
+			<div class="span3 offset1">
+				<h1 class="logo">
+					<a href="#">
+						<img src="img/logo_tp.png" alt="Company name">
+					</a>
+				</h1>
+			</div>
+		</div>
+	</header>
+	<div class="hero-unit" style="background-image: url('img/localequal_mvp.jpg'); background-size:cover; border-radius:0px;">
+		<div class="container" style="text-shadow: 0px 1px 2px #000; color: rgb(255, 255, 255); text-align: center;">
+			<h1>Entrepreneurs helping entrepreneurs</h1>
+			<h2>Solve challenges and win the right to take over successful innovations</h2>
+		</div>
+	</div>
 	<div class="container eb_container">
     	<div class="row">
     		<div class="span1">
     			<!--Left Sidebar content-->
     		</div>
-    		<div ng-view class="span9">
+    		<div ng-view class="span10">
 				<!-- Body content -->
     		</div>
-    		<div class="span2">
+    		<div class="span1">
     			<!--Right Sidebar content-->
     		</div>
     	</div>

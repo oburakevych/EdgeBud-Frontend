@@ -5,7 +5,7 @@
 		</div>
 	</div>
 	<div class="row" ng-repeat="rows in projectRows">
-		<div class="span3" ng-repeat="project in rows | filter: projectQuery">
+		<div class="span10" ng-repeat="project in rows | filter: projectQuery">
 			 <eb-project-card eb-object="rows[$index]"/>
 		</div>
 	</div>

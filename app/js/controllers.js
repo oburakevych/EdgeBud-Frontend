@@ -31,7 +31,7 @@ function ProjectsController($scope, ProjectResource) {
 	}
 
 	$scope.$watch('projects', function() {
-		$scope.projectRows = splitIntoRows($scope.projects, 3);
+		$scope.projectRows = splitIntoRows($scope.projects, 1);
 	});
 }
 
@@ -100,7 +100,7 @@ function ProjectController($scope, ProjectResource, CopmaniesResource) {
 	}
 	
 	$scope.getImageSrc = function() {
-		if (!$scope.project.imageName) {
+		if (!$scope.project.project_detail.imageName) {
 			return "/app/img/photo-main-default.jpg";
 		} else {
 			return "/app/img/" + $scope.project.id + "/photo-main.jpg";
