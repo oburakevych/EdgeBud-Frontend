@@ -13,8 +13,8 @@
 						<table width="100%">
 							<tbody>
 								<tr>
-									<td><h4>{{project.company.name}}&nbsp;</h4></td>
-									<td class="more_link"><a><i class="icon-zoom-in"></i></a></td>
+									<td><h4 eb-log-user-action="Project Company Name">{{project.company.name}}&nbsp;</h4></td>
+									<td class="more_link"><a eb-log-user-action="Find Out More About Project Link"><i class="icon-zoom-in"></i></a></td>
 								</tr>
 							</tbody>
 						</table>
@@ -33,12 +33,12 @@
 			</div>
 			<div class="span6 challenges">
 				<div class="btn-group rewards">
-				  <button ng-repeat="reward in project.rewards" class="btn {{reward.btn_type}}">
+				  <button ng-repeat="reward in project.rewards" class="btn {{reward.btn_type}}" eb-log-user-action="Rewards Figure">
 				  	{{reward.unit}}<strong>{{reward.figure}}</strong>&nbsp;{{reward.text}}&nbsp;<i class="{{reward.icon}}"></i>
 				  </button>
 				</div>
 				<div class="media list_challenges" ng-repeat="challenge in project.challenges">
-					<a class="pull-left" href="#">
+					<a class="pull-left" href="#" eb-log-user-action="Challenge">
 						<img class="media-object challenge_icon" ng-src="img/challenges/{{challenge.icon}}">
 					</a>
 					<div class="media-body">
@@ -47,7 +47,7 @@
 							<table width="100%">
 								<tbody>
 									<tr class="action" ng-repeat="task in challenge.top_tasks | filter:{'type':'top'}">
-										<td><i class="icon-chevron-right"></i>
+										<td><i class="icon-chevron-right" eb-log-user-action="Challenge Task"></i>
 											<a href="#">{{task.name}}</a>
 										</td>
 										<td align="right"><a href="#">{{task.contributors}}&nbsp;<i class="icon-user"></i></a></td>
@@ -61,7 +61,7 @@
 								<tbody>
 									<tr>
 										<td><i class="icon-chevron-right"></i>
-											<a href="#"><em>more actions ...</em></a>
+											<a href="#" eb-log-user-action="Challenges See More Actions"><em>more actions ...</em></a>
 										</td>
 									</tr>
 								</tbody>

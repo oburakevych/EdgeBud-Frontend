@@ -1,5 +1,28 @@
 'use strict';
 
+function UserSignupLoginController($scope, $rootScope, $cookies, SecurityService) {
+	$scope.owner = {};
+
+	$scope.signup = function() {
+		console.log("Signup " + angular.toJson($scope.owner));
+		SecurityService.signup($scope.owner);
+	}
+
+	$scope.login = function() {
+		console.log("Login " + angular.toJson($scope.owner));
+		SecurityService.login($scope.owner);
+	}
+
+	$scope.logout = function() {
+		console.log("Logging out " + angular.toJson($rootScope.authorisedOwner));
+		SecurityService.logout();
+	}
+
+	$rootScope.logMyAction = function(actionType, element) {
+		log.console("Logging user action: ");
+	}
+} 
+
 function ProjectsController($scope, ProjectResource) {
 	$scope.projects = ProjectResource.query();
 
@@ -35,10 +58,9 @@ function ProjectsController($scope, ProjectResource) {
 	});
 }
 
-function ProjectController($scope, ProjectResource, CopmaniesResource) {
+function ProjectController($scope, $rootScope, UserActionResource, ProjectResource, CopmaniesResource, SecurityService) {
 	$scope.newProject = {
 			company: {
-				id: "" + Math.random(),
 				figures: []
 			}
 	};
@@ -70,14 +92,10 @@ function ProjectController($scope, ProjectResource, CopmaniesResource) {
 		
 		angular.uppercase($scope.newProject.status);
 		
-		if (!$scope.newProject.company.id) {
-			$scope.newProject.company.id = "" + Math.random();
-		}
-		
 		if ($scope.opportunities) {
 			$scope.newProject.opportunities = [];
 			angular.forEach($scope.opportunities, function(opportunity, index) {
-				$scope.newProject.opportunities.push({id: '' + $scope.newProject.id + '' + index, name: opportunity});	
+				$scope.newProject.opportunities.push({name: opportunity});	
 			});
 		}
 		
@@ -105,6 +123,10 @@ function ProjectController($scope, ProjectResource, CopmaniesResource) {
 		} else {
 			return "/app/img/" + $scope.project.id + "/photo-main.jpg";
 		}
+	}
+
+	$scope.logAction = function() {
+		UserActionResource.log({id: '1'});
 	}
 	
 	$scope.getCompanies();

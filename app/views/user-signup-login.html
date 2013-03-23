@@ -1,0 +1,18 @@
+<section ng-controller="UserSignupLoginController" class="login-form">
+	<div class="form-inline controls" ng-hide="authorisedOwner">
+		<input type="email" placeholder="E-mail" class="input-small" ng-model="owner.username"/>
+		<input type="password" placeholder="Password" class="input-small" ng-model="owner.password"/>
+		<button class="btn btn-primary" ng-click="login()">Login</button>
+		<button class="btn" ng-click="signup()">Signup</button>
+	</div>
+	<p class="text-error">{{authorisationFailed}}</p>
+	<div class="btn-group form-inline controls" ng-show="authorisedOwner">
+		<button class="btn dropdown-toggle" data-toggle="dropdown">
+			{{authorisedOwner.username}}
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li><a ng-click="logout()">Logout</a></li>
+		</ul>
+	</div>
+</section>

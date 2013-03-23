@@ -3,6 +3,10 @@
 	{
 		"selected_items":
 		[
+			[
+				"lo",
+				"log"
+			]
 		]
 	},
 	"buffers":
@@ -11,7 +15,7 @@
 			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 2075,
+				"buffer_size": 2359,
 				"line_ending": "Unix"
 			}
 		},
@@ -19,7 +23,7 @@
 			"file": "app/js/app.js",
 			"settings":
 			{
-				"buffer_size": 592,
+				"buffer_size": 704,
 				"line_ending": "Unix"
 			}
 		},
@@ -32,10 +36,18 @@
 			}
 		},
 		{
-			"file": "app/js/eb-project-module.js",
+			"file": "app/js/controllers.js",
 			"settings":
 			{
-				"buffer_size": 453,
+				"buffer_size": 3158,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/js/eb-action-interceptor.js",
+			"settings":
+			{
+				"buffer_size": 1208,
 				"line_ending": "Unix"
 			}
 		},
@@ -43,15 +55,7 @@
 			"file": "app/views/project-card.html",
 			"settings":
 			{
-				"buffer_size": 3817,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/css/project.less",
-			"settings":
-			{
-				"buffer_size": 3671,
+				"buffer_size": 4065,
 				"line_ending": "Unix"
 			}
 		}
@@ -80,7 +84,17 @@
 	},
 	"file_history":
 	[
+		"/Users/alexb/projects/EdgeBud-Frontend/app/views/project-card.html",
 		"/Users/alexb/projects/EdgeBud-Frontend/app/views/header.html",
+		"/Users/alexb/projects/EdgeBud-Frontend/app/views/user-signup-login.html",
+		"/Users/alexb/projects/EdgeBud-Frontend/app/js/eb-user-module.js",
+		"/Users/alexb/projects/EdgeBud-Frontend/app/js/http-auth-interceptor-app.js",
+		"/Users/alexb/projects/EdgeBud-Frontend/app/css/login.less",
+		"/Users/alexb/projects/EdgeBud-Frontend/app/css/project.less",
+		"/Users/alexb/projects/EdgeBud-Frontend/app/js/angular-cookies.js",
+		"/Users/alexb/projects/EdgeBud-Frontend/app/js/angular-cookies.min.js",
+		"/Users/alexb/projects/EdgeBud-Frontend/app/lib/angular.min.js",
+		"/Users/alexb/projects/EdgeBud-Frontend/app/js/eb-project-module.js",
 		"/Users/alexb/projects/EdgeBud-Frontend/app/views/top-banner.html"
 	],
 	"find":
@@ -99,6 +113,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"CopmaniesResource",
 			"challenge.icon"
 		],
 		"highlight": true,
@@ -125,15 +140,15 @@
 					"file": "app/index.html",
 					"settings":
 					{
-						"buffer_size": 2075,
+						"buffer_size": 2359,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								98,
-								98
+								2209,
+								2209
 							]
 						],
 						"settings":
@@ -152,15 +167,15 @@
 					"file": "app/js/app.js",
 					"settings":
 					{
-						"buffer_size": 592,
+						"buffer_size": 704,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								164,
+								189
 							]
 						],
 						"settings":
@@ -202,18 +217,18 @@
 				},
 				{
 					"buffer": 3,
-					"file": "app/js/eb-project-module.js",
+					"file": "app/js/controllers.js",
 					"settings":
 					{
-						"buffer_size": 453,
+						"buffer_size": 3158,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2981,
+								2981
 							]
 						],
 						"settings":
@@ -229,23 +244,23 @@
 				},
 				{
 					"buffer": 4,
-					"file": "app/views/project-card.html",
+					"file": "app/js/eb-action-interceptor.js",
 					"settings":
 					{
-						"buffer_size": 3817,
+						"buffer_size": 1208,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								107,
-								113
+								504,
+								504
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -256,27 +271,27 @@
 				},
 				{
 					"buffer": 5,
-					"file": "app/css/project.less",
+					"file": "app/views/project-card.html",
 					"settings":
 					{
-						"buffer_size": 3671,
+						"buffer_size": 4065,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								945,
-								945
+								598,
+								714
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 587.0,
+						"translation.y": 16.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -290,7 +305,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
