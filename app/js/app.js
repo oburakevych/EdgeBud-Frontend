@@ -12,7 +12,7 @@ var edgeBudModule = angular.module('edgeBudApp',
 );
 
 edgeBudModule.BASE_URL = 'data';
-edgeBudModule.BASE_URL_BACKEND = 'http://localhost\:8680/edgebud';
+edgeBudModule.BASE_URL_BACKEND = 'http://50.56.95.120\:8680/edgebud-backend';
 
 edgeBudModule.config(['$routeProvider', function($routeProvider) {
 	  $routeProvider.

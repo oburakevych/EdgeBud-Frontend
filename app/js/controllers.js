@@ -137,7 +137,7 @@ function ProjectController($scope, $rootScope, UserActionResource, ProjectResour
 }
 	
 function ProjectDetailsController($scope, $routeParams, ProjectResource) {
-	$scope.project = ProjectResource.get({id: $routeParams.id});
+	$scope.project = ProjectResource.get({projectId: $routeParams.id});
 
 }
 
