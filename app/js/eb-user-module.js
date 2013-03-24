@@ -10,32 +10,58 @@ ebUserModule.directive('ebLoginForm', function() {
 	};
 });
 
-ebUserModule.factory('SecurityService', function($http, $rootScope) {
+ebUserModule.factory('SecurityService', function($http, $rootScope, $cookieStore) {
 	return {
-		signup: function(owner) {
+		signup: function(owner, $scope, successFn, errorFn) {
 			if (owner && owner.username && owner.password) {
-				$rootScope.authorisationFailed = null;
+				if ($scope) {
+					$scope.authorisationFailed = null;
+				}
 				$http.post(edgeBudModule.BASE_URL_BACKEND + '/owners/signup', owner)
 					.success(function(data) {
 						console.log("authenticated successfully");
 						$rootScope.authorisedOwner = data;
+						$cookieStore.put("EB_LOGGED_USER", $rootScope.authorisedOwner);
+
+						if (successFn) {
+							successFn();
+						}
 					}).error(function(data) {
 						console.warn('Signup failed: ' + data);
-						$rootScope.authorisationFailed = data;
+						if ($scope) {
+							$scope.authorisationFailed = data;
+						}
+
+						if (errorFn) {
+							errorFn();
+						}
 					});
 			}
 		},
 
-		login: function(owner) {
+		login: function(owner, $scope, successFn, errorFn) {
 			if (owner && owner.username && owner.password) {
-				$rootScope.authorisationFailed = null;
+				if ($scope) {
+					$scope.authorisationFailed = null;
+				}
 				$http.post(edgeBudModule.BASE_URL_BACKEND + '/owners/authenticate', owner)
 					.success(function(data) {
 						console.log("authenticated successfully");
 						$rootScope.authorisedOwner = data;
+						$cookieStore.put("EB_LOGGED_USER", $rootScope.authorisedOwner);
+
+						if (successFn) {
+							successFn();
+						}
 					}).error(function(data) {
 						console.warn('Authorisation failed: ' + data);
-						$rootScope.authorisationFailed = data;
+						if ($scope) {
+							$scope.authorisationFailed = data;
+						}
+
+						if (errorFn) {
+							errorFn();
+						}
 					});
 			}
 		},
@@ -43,6 +69,10 @@ ebUserModule.factory('SecurityService', function($http, $rootScope) {
 		logout: function() {
 			if ($rootScope.authorisedOwner) {
 				$rootScope.authorisedOwner = undefined;
+			}
+
+			if ($cookieStore.get("EB_LOGGED_USER")) {
+				$cookieStore.remove("EB_LOGGED_USER");
 			}
 		}
 	}

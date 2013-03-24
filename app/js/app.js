@@ -2,7 +2,14 @@
 
 /* EdgeBud App Module */
 
-var edgeBudModule = angular.module('edgeBudApp', ['ebProjectModule', 'ebCompaniesModule', 'filterModule', 'ebUserModule', 'ebActionInterceptorModule']);
+var edgeBudModule = angular.module('edgeBudApp', 
+		['ebProjectModule', 
+		 'ebCompaniesModule', 
+		 'filterModule', 
+		 'ebUserModule', 
+		 'ebActionInterceptorModule',
+		 'ebDialogModule']
+);
 
 edgeBudModule.BASE_URL = 'data';
 edgeBudModule.BASE_URL_BACKEND = 'http://localhost\:8680/edgebud';

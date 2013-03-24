@@ -1,16 +1,24 @@
 'use strict';
 
-function UserSignupLoginController($scope, $rootScope, $cookies, SecurityService) {
+function UserSignupLoginController($scope, $rootScope, $cookieStore, SecurityService) {
+	$scope.haveAccount = false;
 	$scope.owner = {};
 
-	$scope.signup = function() {
+	$scope.signup = function(successFn, errorFn) {
 		console.log("Signup " + angular.toJson($scope.owner));
-		SecurityService.signup($scope.owner);
+		SecurityService.signup($scope.owner, $scope, successFn, errorFn);
 	}
 
-	$scope.login = function() {
+	$scope.login = function(successFn, errorFn) {
 		console.log("Login " + angular.toJson($scope.owner));
-		SecurityService.login($scope.owner);
+		SecurityService.login($scope.owner, $scope, successFn, errorFn);
+	}
+
+	if (!$rootScope.authorisedOwner) {
+		var userCookie = $cookieStore.get("EB_LOGGED_USER");
+		if (userCookie) {
+			SecurityService.login(userCookie);
+		}
 	}
 
 	$scope.logout = function() {
@@ -134,5 +142,25 @@ function ProjectController($scope, $rootScope, UserActionResource, ProjectResour
 	
 function ProjectDetailsController($scope, $routeParams, ProjectResource) {
 	$scope.project = ProjectResource.get({id: $routeParams.id});
+
+}
+
+function DialogController($scope, $rootScope) {
+	if (!$rootScope.dialogs) {
+		$rootScope.dialogs = {};
+		$rootScope.dialogs['LoginSignup'] = $('#eb_must_login_dialog');
+	}
+	
+	$scope.closeDialog = function(name) {
+		if (name && $scope.dialogs[name]) {
+			$scope.dialogs[name].dialog("close");
+		}
+	}
+
+	$scope.closeLoginSignupDialog = function() {
+		if ($scope.dialogs['LoginSignup']) {
+			$scope.dialogs['LoginSignup'].dialog("close");
+		}
+	}
 
 }

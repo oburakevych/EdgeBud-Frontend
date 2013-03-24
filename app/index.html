@@ -12,6 +12,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.2.custom.min.css">
 	
 	<link rel="stylesheet/less" type="text/css" href="css/utils.less">
 	<link rel="stylesheet/less" type="text/css" href="css/header.less">
@@ -33,10 +34,12 @@
     			<!--Right Sidebar content-->
     		</section>
     	</div>
+    	<div id="eb_must_login_dialog" style="display: none;" ng-include src="'/app/views/login-dialog.html'"></div>
     </section>
 </body>
 	<!-- Use new version 1.1.1 from CDN when released-->
 	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/jquery-ui-1.10.2.custom.min.js"></script>
 	<script type="text/javascript" src="lib/json2.js"></script>
 	<script type="text/javascript" src="lib/pretty.js"></script>
 	<script type="text/javascript" src="lib/angular.min.js"></script>
@@ -50,6 +53,7 @@
 	<script type="text/javascript" src="js/eb-companies-module.js"></script>
 	<script type="text/javascript" src="js/eb-user-module.js"></script>
 	<script type="text/javascript" src="js/eb-action-interceptor.js"></script>
+	<script type="text/javascript" src="js/eb-dialog-module.js"></script>
 	<script type="text/javascript" src="js/controllers.js"></script>
 	<script type="text/javascript" src="js/filters.js"></script>
 </html>

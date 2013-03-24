@@ -21,7 +21,7 @@ actionInterceptorModule.factory('UserActionResource', function($http) {
 });
 
 
-actionInterceptorModule.directive('ebLogUserAction', function($rootScope, UserActionResource) {
+actionInterceptorModule.directive('ebLogUserAction', function($rootScope, UserActionResource, jqueryUI) {
 	return {
 		restrict: 'A',
 		link: function(scope, elm, attrs) {
@@ -40,7 +40,16 @@ actionInterceptorModule.directive('ebLogUserAction', function($rootScope, UserAc
 					}	
 				}
 				
-				UserActionResource.log({owner: $rootScope.authorisedOwner, type: 'MouseDown', elementName: name, htlm: elm.innerHTML});
+				try {
+					UserActionResource.log({owner: $rootScope.authorisedOwner, type: 'MouseDown', elementName: name, htlm: elm.innerHTML});
+				} catch(error) {
+					console.warn("Error loggin user actions: " + error);
+				}
+
+				if (!$rootScope.authorisedOwner) {
+					//Create a dialog asking to register
+					jqueryUI.activateDialog($rootScope.dialogs['LoginSignup'], 'Log in to get involved');
+				}
 			});
 		}
 	};
