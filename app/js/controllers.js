@@ -132,10 +132,6 @@ function ProjectController($scope, $rootScope, UserActionResource, ProjectResour
 			return "/app/img/" + $scope.project.id + "/photo-main.jpg";
 		}
 	}
-
-	$scope.logAction = function() {
-		UserActionResource.log({id: '1'});
-	}
 	
 	$scope.getCompanies();
 }
@@ -149,6 +145,7 @@ function DialogController($scope, $rootScope) {
 	if (!$rootScope.dialogs) {
 		$rootScope.dialogs = {};
 		$rootScope.dialogs['LoginSignup'] = $('#eb_must_login_dialog');
+		$rootScope.dialogs['TakeAction'] = $('#eb_take_action_dialog');
 	}
 	
 	$scope.closeDialog = function(name) {
@@ -158,9 +155,39 @@ function DialogController($scope, $rootScope) {
 	}
 
 	$scope.closeLoginSignupDialog = function() {
-		if ($scope.dialogs['LoginSignup']) {
-			$scope.dialogs['LoginSignup'].dialog("close");
+		$scope.closeDialog('LoginSignup');
+	}
+
+	$scope.closeTakeActionDialog = function() {
+		$scope.closeDialog('TakeAction');
+	}
+}
+
+function TakeActionController($scope, $rootScope, UserActionResource, jqueryUI) {
+	$scope.logAction = function() {
+		if ($scope.userAction) {
+			UserActionResource.log($scope.userAction);
 		}
 	}
 
+	$scope.$on('event:show-action-dialog', function(event, args) {
+		console.log('event:show-action-dialog even caught');
+		$scope.initAction(args);
+
+		jqueryUI.activateDialog($rootScope.dialogs['TakeAction'], 'Take an action');
+	});
+
+	$scope.initAction = function(details) {
+		$scope.userAction = {
+			owner: $rootScope.authorisedOwner, 
+			type: 'ManualAction',
+			message: ''
+		};
+
+		if (details) {
+			if (details.elementName) {
+				$scope.userAction.elementName = details.elementName;
+			}
+		}
+	}
 }

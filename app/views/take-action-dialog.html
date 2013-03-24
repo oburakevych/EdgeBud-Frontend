@@ -1,0 +1,31 @@
+<div ng-controller='DialogController'>
+	<section ng-controller="TakeActionController" class="row">
+        
+
+        <div class="form-horizontal span6">
+            <h4>It's great you started doing real actions!</h4>
+            <div class="control-group">
+                    <p>
+                        In this beta version we are investigating what real actions people like you can take in order to help entrepreneur rather than implementing something we think will be good. That's why your input is incredably usefull for us. Please, tell us, how you can help doing this action.
+                    </p>
+            </div>
+            <!-- Showl we add any actions with checkboxes?
+            <div class="control-group">
+                    <label class="checkbox">
+                        <input type="checkbox">Action 1
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox">Action 2
+                    </label>
+            </div>
+            -->
+            <div class="control-group">
+                <textarea rows="3" class="span6" ng-model="userAction.message"></textarea>                
+            </div>
+            <div class="control-group">
+                <button class="btn btn-primary" ng-click="logAction(); closeTakeActionDialog()">Submit</button>
+                <button class="btn" ng-click="closeTakeActionDialog()">No, thanks</button>
+            </div>
+        </div>
+	</section>
+</div>

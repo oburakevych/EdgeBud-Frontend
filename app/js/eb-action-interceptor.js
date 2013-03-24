@@ -27,16 +27,23 @@ actionInterceptorModule.directive('ebLogUserAction', function($rootScope, UserAc
 		link: function(scope, elm, attrs) {
 			elm.mousedown(function() {
 				var name = null;
+				var showActionDialog = true;
+
 				if (elm && elm[0]) {
 					elm = elm[0];
 				} ;
 
 				if (elm.attributes && elm.attributes.length > 0) {
 					for (var i = 0; i < elm.attributes.length; i++) {
-						if (elm.attributes[i].nodeName && elm.attributes[i].nodeName === 'eb-log-user-action') {
-							name = elm.attributes[i].nodeValue;
-							break;
+						if (elm.attributes[i].nodeName) {
+							if (elm.attributes[i].nodeName === 'eb-log-user-action') {
+								name = elm.attributes[i].nodeValue;
+							} else if (elm.attributes[i].nodeName === 'eb-show-action-dialog' && (elm.attributes[i].nodeValue === 'false' || elm.attributes[i].nodeValue === 'no')) {
+								showActionDialog = false;
+							};
 						}
+
+
 					}	
 				}
 				
@@ -49,6 +56,11 @@ actionInterceptorModule.directive('ebLogUserAction', function($rootScope, UserAc
 				if (!$rootScope.authorisedOwner) {
 					//Create a dialog asking to register
 					jqueryUI.activateDialog($rootScope.dialogs['LoginSignup'], 'Log in to get involved');
+				} else if (showActionDialog) {
+					console.log('event:show-action-dialog even fired');
+					$rootScope.$broadcast('event:show-action-dialog', {elementName: name});
+					// Create a dialog 
+					//jqueryUI.activateDialog($rootScope.dialogs['TakeAction'], 'Take an action');
 				}
 			});
 		}
