@@ -25,7 +25,7 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, S
 		} else {
 			$timeout($scope.showLoginSignupDialog, 200, true);
 		}
-	} 
+	}
 
 	$scope.logout = function() {
 		console.log("Logging out " + angular.toJson($rootScope.authorisedOwner));
