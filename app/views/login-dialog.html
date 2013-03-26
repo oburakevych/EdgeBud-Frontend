@@ -4,13 +4,13 @@
         <p>Welcome to LocalEqual Beta. We feature very innovative projects. This beta is built to let us know how you interact with the content.</p>
     </section>
     <section ng-controller="UserSignupLoginController" class="login-form">
-        <div class="form-inline controls" ng-hide="authorisedOwner">
+        <div class="form-inline controls login_dialog" ng-hide="authorisedOwner">
             <input type="email" placeholder="E-mail" class="input-small" ng-model="owner.username"/>
             <input type="password" placeholder="Password" class="input-small" ng-model="owner.password"/>
             <button class="btn btn-primary" ng-click="login(closeLoginSignupDialog)">Login</button>
             <button class="btn" ng-click="signup(closeLoginSignupDialog)">Signup</button>
+            <span class="text-error">{{authorisationFailed}}</span>
         </div>
-        <p class="text-error">{{authorisationFailed}}</p>
 	</section>
     <section class="detail_dialog">
         <img src="img/20130311_flow.png"/>
