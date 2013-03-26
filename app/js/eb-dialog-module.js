@@ -15,13 +15,14 @@ dialogModule.factory('jqueryUI', function ($window, $templateCache, $document, $
         activateDialog: function(cssSelector, title, defaultButtons, onApplyFn, onCancelFn) {
             var options = {
                 modal : true,
-                draggable : false,
-                resizable : false,
+                draggable : true,
+                resizable : true,
                 show: {effect: 'drop', direction: "up"},
                 hide: {effect: 'drop', direction: "up"},
                 title : title,
                 closeText: "Close",
                 minHeight : 206,
+                maxHeight : 600,
                 minWidth : 375,
                 width : 'auto',
                 height : 'auto',

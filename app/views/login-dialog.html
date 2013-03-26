@@ -1,42 +1,18 @@
 <div ng-controller='DialogController'>
-	<section ng-controller="UserSignupLoginController" class="login-form">
-		<h4 ng-hide="haveAccount">Create an account to get involved</h4>
-		<h4 ng-show="haveAccount">Log in to get involved</h4>
-    	<div class="form-horizontal">
-    		<div class="control-group" ng-hide="haveAccount">
-    			<label class="control-label" for="inputName">Name</label>
-    			<div class="controls">
-    				<input type="text" id="inputName" placeholder="Name" ng-model="owner.name"/>
-    			</div>
-    		</div>
-    		<div class="control-group">
-    			<label class="control-label" for="inputEmail">E-mail</label>
-    			<div class="controls">
-    				<input type="email" id="inputEmail" placeholder="E-mail" ng-model="owner.username"/>
-    			</div>
-    		</div>
-    		<div class="control-group">
-    			<label class="control-label" for="inputPassword">Password</label>
-    			<div class="controls">
-    				<input type="password" id="inputPassword" placeholder="Password" ng-model="owner.password"/>
-    			</div>
-    		</div>
-			<div class="control-group">
-				<p class="text-error">{{authorisationFailed}}</p>
-			</div>
-
-    		<div class="control-group" ng-hide="haveAccount">
-    			<div class="controls">
-    				<button class="btn btn-info" ng-click="signup(closeLoginSignupDialog)">Sign up</button>
-    			</div>
-    		</div>
-    		<div class="control-group" ng-show="haveAccount">
-    			<div class="controls">
-    				<button class="btn btn-primary" ng-click="login(closeLoginSignupDialog)">Log in</button>
-    			</div>
-    		</div>
-    	</div>
-    	<h4 ng-hide="haveAccount" class="text-info">Already have an account? <a href="" ng-click="haveAccount = !haveAccount">Log in now</a></h4>
-    	<h4 ng-show="haveAccount" class="text-info">Don't have an account yet? <a href="" ng-click="haveAccount = !haveAccount">Sign up now</a></h4>
+	<section class="intro_dialog">
+        <h4>LocalEqual, the smartest wway to start your own company</h4>
+        <p>Welcome to LocalEqual Beta. We feature very innovative projects. This beta is built to let us know how you interact with the content.</p>
+    </section>
+    <section ng-controller="UserSignupLoginController" class="login-form">
+        <div class="form-inline controls" ng-hide="authorisedOwner">
+            <input type="email" placeholder="E-mail" class="input-small" ng-model="owner.username"/>
+            <input type="password" placeholder="Password" class="input-small" ng-model="owner.password"/>
+            <button class="btn btn-primary" ng-click="login(closeLoginSignupDialog)">Login</button>
+            <button class="btn" ng-click="signup(closeLoginSignupDialog)">Signup</button>
+        </div>
+        <p class="text-error">{{authorisationFailed}}</p>
 	</section>
+    <section class="detail_dialog">
+        <img src="img/20130311_flow.png"/>
+    </section>
 </div>

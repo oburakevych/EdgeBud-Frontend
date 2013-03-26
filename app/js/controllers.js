@@ -5,7 +5,7 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, S
 	$scope.owner = {};
 
 	$scope.showLoginSignupDialog = function() {
-		jqueryUI.activateDialog($rootScope.dialogs['LoginSignup'], 'Log in to get involved');
+		jqueryUI.activateDialog($rootScope.dialogs['LoginSignup'], 'Welcome to LocalEqual Beta');
 	}
 	
 	$scope.signup = function(successFn, errorFn) {
