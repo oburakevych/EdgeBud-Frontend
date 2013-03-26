@@ -20,6 +20,7 @@ dialogModule.factory('jqueryUI', function ($window, $templateCache, $document, $
                 show: {effect: 'drop', direction: "up"},
                 hide: {effect: 'drop', direction: "up"},
                 title : title,
+                closeText: "Close",
                 minHeight : 206,
                 minWidth : 375,
                 width : 'auto',

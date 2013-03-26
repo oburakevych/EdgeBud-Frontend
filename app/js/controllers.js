@@ -1,9 +1,13 @@
 'use strict';
 
-function UserSignupLoginController($scope, $rootScope, $cookieStore, SecurityService) {
+function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, SecurityService, jqueryUI) {
 	$scope.haveAccount = false;
 	$scope.owner = {};
 
+	$scope.showLoginSignupDialog = function() {
+		jqueryUI.activateDialog($rootScope.dialogs['LoginSignup'], 'Log in to get involved');
+	}
+	
 	$scope.signup = function(successFn, errorFn) {
 		console.log("Signup " + angular.toJson($scope.owner));
 		SecurityService.signup($scope.owner, $scope, successFn, errorFn);
@@ -18,8 +22,10 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, SecuritySer
 		var userCookie = $cookieStore.get("EB_LOGGED_USER");
 		if (userCookie) {
 			SecurityService.login(userCookie);
+		} else {
+			$timeout($scope.showLoginSignupDialog, 200, true);
 		}
-	}
+	} 
 
 	$scope.logout = function() {
 		console.log("Logging out " + angular.toJson($rootScope.authorisedOwner));
@@ -29,6 +35,10 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, SecuritySer
 	$rootScope.logMyAction = function(actionType, element) {
 		log.console("Logging user action: ");
 	}
+	
+	$scope.$on('event:show-login-signup-dialog', function() {
+		$scope.showLoginSignupDialog();		
+	});
 } 
 
 function ProjectsController($scope, ProjectResource) {

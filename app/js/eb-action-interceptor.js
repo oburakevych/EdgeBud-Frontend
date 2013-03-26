@@ -21,7 +21,7 @@ actionInterceptorModule.factory('UserActionResource', function($http) {
 });
 
 
-actionInterceptorModule.directive('ebLogUserAction', function($rootScope, UserActionResource, jqueryUI) {
+actionInterceptorModule.directive('ebLogUserAction', function($rootScope, UserActionResource) {
 	return {
 		restrict: 'A',
 		link: function(scope, elm, attrs) {
@@ -55,12 +55,10 @@ actionInterceptorModule.directive('ebLogUserAction', function($rootScope, UserAc
 
 				if (!$rootScope.authorisedOwner) {
 					//Create a dialog asking to register
-					jqueryUI.activateDialog($rootScope.dialogs['LoginSignup'], 'Log in to get involved');
+					$rootScope.$broadcast('event:show-login-signup-dialog');
 				} else if (showActionDialog) {
 					console.log('event:show-action-dialog even fired');
 					$rootScope.$broadcast('event:show-action-dialog', {elementName: name});
-					// Create a dialog 
-					//jqueryUI.activateDialog($rootScope.dialogs['TakeAction'], 'Take an action');
 				}
 			});
 		}
