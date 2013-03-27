@@ -28,9 +28,9 @@
 				</div>
 			</div>
 			<div class="span5 challenges">
-				<div class="btn-group rewards" ng-repeat="reward in project.rewards">
-				  <button class="btn disabled"><span style="font-family:font-family: 'Reenie Beanie';">{{reward.type}}</button>
-				  <button  class="btn {{reward.btn_type}} disabled" eb-log-user-action="Rewards Figure">
+				<div class="rewards" ng-repeat="reward in project.rewards">
+				  <span style="font-family: 'Reenie Beanie'; font-size:25px;">{{reward.type}}:&nbsp;</span>
+				  <button  class="btn {{reward.btn_type}}" eb-log-user-action="Rewards Figure">
 				  	{{reward.unit}}<strong>{{reward.figure}}</strong>&nbsp;{{reward.text}}&nbsp;<!--<i class="{{reward.icon}}"></i>-->
 				  </button>
 				</div>
