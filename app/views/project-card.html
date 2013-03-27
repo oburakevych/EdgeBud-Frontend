@@ -1,6 +1,6 @@
 <div ng-controller="ProjectController" class="eb_project">
 	<div class="span10 thumbnail tb">
-		<h3 class="header">{{project.project_detail.title}}</h2>
+		<p class="header">{{project.project_detail.title}}</p>
 		<div class="row-fluid">
 			<div class="span6 company">
 				<div class="row-fluid intro">					
@@ -73,40 +73,4 @@
 		</div>
 		<!--<h6 class="seemore">See More&nbsp;&nbsp;<i class="icon-plus"></i></h6>-->
 	</div>
-
-	<!--<ul class="thumbnails">
-		<li class="span9">
-			<div class="thumbnail">
-				<div class="">
-					<h3>{{project.title}}</h2>
-					<a href="#projects/{{project.id}}"><img ng-src="{{getImageSrc()}}" alt="project image" style="width: 300px; height: 200px;"/></a>
-				</div>
-
-				<div class="">
-				</div>
-
-				
-				<div class="body">
-					
-					<h4><a href="#projects/{{project.id}}">{{project.name}}</a></h4>
-					<p class="description">{{project.description}}</p>
-					<p><i class="icon-briefcase"></i><em>&nbsp;{{project.company.name}}</em></p>
-					<ul class="opportunities">Available opportunities:
-						<li ng-repeat="opportunity in project.opportunities">{{opportunity.name}}</li>
-					</ul>
-				</div>
-				
-				<div class="footer {{project.status}}">
-					Ends in 8 days
-				</div>
-				<div class="tags">
-					<span class="item income" title="Height Income"></span>
-					<span class="item supply" title="Supplier Oriented"></span>
-					<span class="item cloud" title="Green Tech"></span>
-				</div>
-				
-			</div>
-		</li>
-	</ul>
-	-->
 </div>

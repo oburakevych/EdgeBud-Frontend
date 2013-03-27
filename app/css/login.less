@@ -1,48 +1,28 @@
+@import "utils.less";
+
 .intro_dialog{
 	margin:0px 0px 0px 0px;
 	padding:0px 0px 0px 0px;
 	border-top: solid 2px rgb(221, 221, 221);	
 }
 
-.login-form {
+.intro_dialog_title{
+	margin-top:0px;
+	color: @darkColor;
+}
+
+.skip_btn{
+	text-align:right
+}
+
+.login_dialog {
 	margin:0px 0px 20px 0px;
 	padding:0px 0px 10px 0px;
 	border-bottom: solid 2px rgb(221, 221, 221);
-}
-
-.ui-dialog-titlebar-close {
-	background: url('../img/glyphicons/glyphicons_207_remove_2.png') no-repeat;
-	border:none;
-	width:20px;
-}
-
-.ui-dialog-titlebar{
-	background: transparent;
-	border : none;
-	color: #4A4A4A;	
-	border-radius:0px;
-}
-
-.ui-dialog{
-	font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
-	position:fixed;
-}
-
-.ui-widget-content{
-	padding-top:0px;	
-}
-
-.ui-widget-overlay {
-	background: black;
-	opacity: .7;
 }
 
 .detail_dialog{
 	margin-left:auto;
 	margin-right:auto;
 	width:80%;
-}
-
-.login_dialog{
-	text-align:middle;
 }
