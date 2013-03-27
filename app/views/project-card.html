@@ -1,8 +1,8 @@
 <div ng-controller="ProjectController" class="eb_project">
 	<div class="span10 thumbnail tb">
-		<p class="header">{{project.project_detail.title}}</p>
+		<!--<p class="header">{{project.project_detail.title}}</p>-->
 		<div class="row-fluid">
-			<div class="span6 company">
+			<div class="span7 company">
 				<div class="row-fluid intro">					
 					<div class="span6">
 						<a href="#projects/{{project.id}}">
@@ -10,14 +10,10 @@
 						</a>
 					</div>
 					<div class="span6">
-						<table width="100%">
-							<tbody>
-								<tr>
-									<td><h4 eb-log-user-action="Project Company Name" eb-show-action-dialog="false">{{project.company.name}}&nbsp;</h4></td>
-									<td class="more_link"><a eb-log-user-action="Find Out More About Project Link"><i class="icon-zoom-in"></i></a></td>
-								</tr>
-							</tbody>
-						</table>
+						<p>
+							<span class="company_name" eb-log-user-action="Project Company Name" eb-show-action-dialog="false">{{project.company.name}}&nbsp;</span>
+							<span class="more_link"><a eb-log-user-action="Find Out More About Project Link"><i class="icon-zoom-in"></i></a></span>
+						</p>
 						<p class="description">{{project.project_detail.description}}&nbsp;<a><em>more...</em></a></p>
 						<p style="margin-bottom:0px;"><i class="icon-map-marker"></i>&nbsp;&nbsp;{{project.company.location}}</p>
 					</div>
@@ -31,7 +27,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="span6 challenges">
+			<div class="span5 challenges">
 				<div class="btn-group rewards">
 				  <button ng-repeat="reward in project.rewards" class="btn {{reward.btn_type}}" eb-log-user-action="Rewards Figure">
 				  	{{reward.unit}}<strong>{{reward.figure}}</strong>&nbsp;{{reward.text}}&nbsp;<i class="{{reward.icon}}"></i>
@@ -39,7 +35,7 @@
 				</div>
 				<div class="media list_challenges" ng-repeat="challenge in project.challenges">
 					<a class="pull-left" href="#" eb-log-user-action="Challenge">
-						<img class="media-object challenge_icon" ng-src="img/challenges/{{challenge.icon}}">
+						<!--<img class="media-object challenge_icon" ng-src="img/challenges/{{challenge.icon}}">-->
 					</a>
 					<div class="media-body">
 						<h5 class="challenge_description">{{challenge.description}}</h5>

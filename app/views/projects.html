@@ -5,6 +5,47 @@
 		</div>
 	</div>
 -->
+	<div class="eb_instructions">
+		<div class="row-fluid">
+			<div class="span7">
+				<div class="rotate-1 rotated_container">
+					<div class="postit company_instructions">
+						<table style="margin-left:25px;">
+							<tbody>
+								<tr>
+									<td rowspan="2" style="font-size:80px;">1.<span style="font-size:20px">&nbsp;</span></td>
+									<td>Select an interesting</td>
+								</tr>
+								<tr>
+									<td style="padding-top:10px;">business below:</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="span5">
+				<div class="rotate1 rotated_container">
+					<div class="postit challenge_instructions">
+						<table style="margin-left:15px;">
+							<tbody>
+								<tr>
+									<td rowspan="2" style="font-size:80px;">2.<span style="font-size:20px">&nbsp;</span></td>
+									<td>Solve challenges ...</td>
+								</tr>
+								<tr>
+									<td style="padding-top:10px;">and win <span style="color:red;">Rewards</span></td>
+								</tr>
+								<tr>
+									<td colspan="2" style="padding-top:10px;">or the right to open a <span style="color:#00B30F;">Branch</span>!</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="row" ng-repeat="rows in projectRows">
 		<div class="span10" ng-repeat="project in rows | filter: projectQuery">
 			 <eb-project-card eb-object="rows[$index]"/>
