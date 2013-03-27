@@ -24,14 +24,16 @@
     },
     "rewards":[
       {
-        "btn_type":"btn-info",
+        "btn_type":"btn-danger",
+        "type":"Rewards",
         "unit":"$",
         "figure":"1800",
         "text":"for grabs",
         "icon":"icon-star icon-white"
       },
       {
-        "btn_type":"",
+        "btn_type":"btn-success",
+        "type":"Opportunities",
         "unit":"",
         "figure":"3",
         "text":"branch openings",
@@ -99,14 +101,16 @@
     },
     "rewards":[
       {
-        "btn_type":"btn-info",
+        "btn_type":"btn-danger",
+        "type":"Rewards",
         "unit":"$",
         "figure":"1800",
         "text":"for grabs",
         "icon":"icon-star icon-white"
       },
       {
-        "btn_type":"",
+        "btn_type":"btn-success",
+        "type":"Opportunities",
         "unit":"",
         "figure":"3",
         "text":"branch openings",
