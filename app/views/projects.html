@@ -1,9 +1,10 @@
 <div ng-controller="ProjectsController" class="eb_projects">
-	<div class="eb_toolbar">
+	<!--<div class="eb_toolbar">
 		<div class="searchbox">
 			<input type="text" class="input-medium search-query" placeholder="Search projects..." ng-model="projectQuery">
 		</div>
 	</div>
+-->
 	<div class="row" ng-repeat="rows in projectRows">
 		<div class="span10" ng-repeat="project in rows | filter: projectQuery">
 			 <eb-project-card eb-object="rows[$index]"/>

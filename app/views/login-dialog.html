@@ -1,16 +1,17 @@
 <div ng-controller='DialogController'>
 	<section class="intro_dialog">
-        <h4>LocalEqual, the smartest wway to start your own company</h4>
+        <h3 class="intro_dialog_title">LocalEqual, the <span class="focus_word">smartest</span> way to start your own company</h3>
         <p>Welcome to LocalEqual Beta. We feature very innovative projects. This beta is built to let us know how you interact with the content.</p>
     </section>
-    <section ng-controller="UserSignupLoginController" class="login-form">
-        <div class="form-inline controls login_dialog" ng-hide="authorisedOwner">
+    <section ng-controller="UserSignupLoginController" class="login-form login_dialog row-fluid">
+        <div class="form-inline controls span9" ng-hide="authorisedOwner">
             <input type="email" placeholder="E-mail" class="input-small" ng-model="owner.username"/>
             <input type="password" placeholder="Password" class="input-small" ng-model="owner.password"/>
             <button class="btn btn-primary" ng-click="login(closeLoginSignupDialog)">Login</button>
             <button class="btn" ng-click="signup(closeLoginSignupDialog)">Signup</button>
             <span class="text-error">{{authorisationFailed}}</span>
         </div>
+        <div class="span3 skip_btn">or&nbsp;&nbsp;<button class="btn btn-success" ng-click="closeLoginSignupDialog()">Skip this step</button></div>
 	</section>
     <section class="detail_dialog">
         <img src="img/20130311_flow.png"/>

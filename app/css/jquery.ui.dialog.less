@@ -10,16 +10,25 @@
  *
  * http://docs.jquery.com/UI/Dialog#theming
  */
+.ui-widget-overlay {
+	background: black;
+	opacity: .7;
+}
 .ui-dialog {
-	position: absolute;
 	top: 0;
 	left: 0;
 	padding: .2em;
 	outline: 0;
+	font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+	position:fixed;
 }
 .ui-dialog .ui-dialog-titlebar {
 	padding: .4em 1em;
-	position: relative;
+	position: relative;	
+	background: transparent;
+	border : none;
+	color: #4A4A4A;	
+	border-radius:0px;
 }
 .ui-dialog .ui-dialog-title {
 	float: left;
@@ -33,17 +42,19 @@
 	position: absolute;
 	right: .3em;
 	top: 50%;
-	width: 21px;
 	margin: -10px 0 0 0;
 	padding: 1px;
 	height: 20px;
+	background: url('../img/glyphicons/glyphicons_207_remove_2.png') no-repeat;
+	border:none;
+	width:20px;
 }
 .ui-dialog .ui-dialog-content {
 	position: relative;
 	border: 0;
-	padding: .5em 1em;
+	padding: 0em 1em 0.5em 1em;
 	background: none;
-	overflow: auto;
+	overflow: auto;	
 }
 .ui-dialog .ui-dialog-buttonpane {
 	text-align: left;
@@ -71,7 +82,7 @@
 }
 
 .ui-widget-header {
-    background: url("../img/noise.png") repeat-x scroll 50% 50% lighten(@projectHeaderBgColor, 10%);
+    background: url("../img/noise.png") repeat-x scroll 50% 50% lighten(@darkColor, 10%);
     border: 1px solid #AAAAAA;
     color: @bgColor;
     font-weight: bold;
