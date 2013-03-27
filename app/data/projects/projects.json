@@ -6,7 +6,82 @@
     },
     "project_detail" : {
       "title" : "Help an America’s Cup Supplier of Connected Objects to Reach More Profitable Industrial Markets",
-      "description" : "",
+      "description" : "The technology of water doping applies to any engine, and is largely unknown. The engine exhaust heat is used in a chamber to get a hot / cold self generating plasma",
+      "key_metrics" :[
+        {
+          "label":"2012 REVENUES",
+          "data":"3 M$"
+        },
+        {
+          "label":"KEY ASSET",
+          "data":"Multi-Use Device"
+        },
+        {
+          "label":"TOP CLIENT",
+          "data":"America's CUP"
+        }
+      ]
+    },
+    "rewards":[
+      {
+        "btn_type":"btn-info",
+        "unit":"$",
+        "figure":"1800",
+        "text":"for grabs",
+        "icon":"icon-star icon-white"
+      },
+      {
+        "btn_type":"",
+        "unit":"",
+        "figure":"3",
+        "text":"branch openings",
+        "icon":"icon-map-marker"
+      }
+    ],
+    "challenges" : [
+      { "description" : "Igtimi doesn't how to grow into different industries",
+        "icon":"tools.png",
+        "top_tasks":[
+          {
+            "type":"top",
+            "name":"Recommend a local partner",
+            "contributors":24
+          },
+          {
+            "type":"top",
+            "name":"Share market insight on your industry",
+            "contributors":5
+          }
+        ],
+        "more_tasks":[]
+      },
+      { "description" : "Igtimi needs you to expand at the international level",
+        "icon":"network.png",
+        "top_tasks":[
+          {
+            "type":"top",
+            "name":"Apply to become a local partner",
+            "contributors":3
+          }
+        ],
+        "more_tasks":[
+          {
+            "type":"additional",
+            "name":"blablabla",
+            "contributors":16
+          }
+        ]
+      }
+    ]
+  },
+   { "company" : {
+      "name" : "Water Doping for Cars",
+      "url" : null,
+      "location" : "OpenSource Innovation"
+    },
+    "project_detail" : {
+      "title" : "Help an America’s Cup Supplier of Connected Objects to Reach More Profitable Industrial Markets",
+      "description" : "The technology of water doping applies to any engine, and is largely unknown. The engine exhaust heat is used in a chamber to get a hot / cold self generating plasma",
       "key_metrics" :[
         {
           "label":"2012 REVENUES",

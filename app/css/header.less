@@ -1,18 +1,15 @@
 @import "utils.less";
 
-.eb_header {
+.eb_header{
 	position: fixed;
-	top: 0;
-	height: 40px;
+	height: auto;
 	text-align: center;
 	z-index: 900;
-	box-shadow: 0 0 10px rgba(51, 51, 51, 0.70);
-	background: transparent url('../img/noise.png') repeat; /*IE fix*/
-	background: rgba(0, 0, 0, 0.70) url('../img/noise.png') repeat;
+	background: white;
+	border-bottom: 1px solid @darkColor;
 	width: 100%;
-	left: 0;
-	color: white;
-	font-size:12px;
+	margin-left:0px;
+	display: block;
 }
 
 .header_form {
@@ -30,4 +27,14 @@
 
 .logo {
 	height:46px;
+}
+
+.header_instructions{
+	position: fixed;
+	top:67px;
+	z-index:600;
+}
+
+.header_postit{
+	z-index:600;
 }
