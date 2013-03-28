@@ -1,6 +1,8 @@
 [
   { "company" : {
-      "name" : "Water Doping for Cars",
+      "name" : "",
+      "hide_name": false,
+      "baseline" : "Water doping for cars",
       "url" : null,
       "location" : "OpenSource Innovation"
     },
@@ -30,14 +32,6 @@
         "figure":"1800",
         "text":"for grabs",
         "icon":"icon-star icon-white"
-      },
-      {
-        "btn_type":"btn-success",
-        "type":"Opportunities",
-        "unit":"",
-        "figure":"3",
-        "text":"branch openings",
-        "icon":"icon-map-marker"
       }
     ],
     "challenges" : [
@@ -47,12 +41,16 @@
           {
             "type":"top",
             "name":"Recommend a local partner",
-            "contributors":24
+            "contributors":24,
+            "reward":"$400",
+            "reward_btn":"btn-danger"
           },
           {
             "type":"top",
             "name":"Share market insight on your industry",
-            "contributors":5
+            "contributors":5,
+            "reward":"$600",
+            "reward_btn":"btn-danger"
           }
         ],
         "more_tasks":[]
@@ -63,7 +61,9 @@
           {
             "type":"top",
             "name":"Apply to become a local partner",
-            "contributors":3
+            "contributors":3,
+            "reward":"3 Positions",
+            "reward_btn":"btn-success"
           }
         ],
         "more_tasks":[
@@ -77,7 +77,9 @@
     ]
   },
    { "company" : {
-      "name" : "Water Doping for Cars",
+      "name" : "Eyeka",
+      "hide_name": false,
+      "baseline" : "Crowdsourcing of Video Ads",
       "url" : null,
       "location" : "OpenSource Innovation"
     },
@@ -107,14 +109,6 @@
         "figure":"1800",
         "text":"for grabs",
         "icon":"icon-star icon-white"
-      },
-      {
-        "btn_type":"btn-success",
-        "type":"Opportunities",
-        "unit":"",
-        "figure":"3",
-        "text":"branch openings",
-        "icon":"icon-map-marker"
       }
     ],
     "challenges" : [

@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'handwritting_1';
+  font-style: normal;
+  font-weight: 400;
+  src: url(handwritting_1.woff) format('woff');
+}
+
+@font-face{
+	font-family: 'handwritting_2';
+	font-style: normal;
+ 	font-weight: 400;
+ 	src: url(handwritting_2.ttf);
+}
+@font-face{
+	font-family: 'handwritting_2_italic';
+	font-style: normal;
+ 	font-weight: 400;
+ 	src: url(handwritting_2_italic.ttf);
+}
+@font-face{
+	font-family: 'handwritting_2_bold';
+	font-style: normal;
+ 	font-weight: 400;
+ 	src: url(handwritting_2_bold.ttf);
+}

@@ -2,13 +2,9 @@
 
 .eb_instructions{
 	top:0px;
-	margin-top:-30px;
-    margin-bottom:-15px;
+	margin-top:-35px;
+    margin-bottom:-5px;
 	z-index:850;
-}
-
-.rotated_container{
-	text-align:center;
 }
 
 .company_instructions{
@@ -23,7 +19,37 @@
     width: 360px;
     min-height: 100px;
     max-height: 100px;
-    margin: 25px auto;
+    margin: 25px auto 25px auto;
+}
+
+.eb_add_project {
+    .centered;
+}
+
+    
+.load_more {
+    display: block;
+    width: 100%;
+    float: right;
+    padding-bottom: 30px;
+    
+    a {
+        padding: 10px;
+        margin: 10px;
+        font-size: 120%;
+    }
+}
+
+.eb_toolbar { 
+    width: 100%;
+    margin: 10px 36px 36px 36px;
+    display: block;
+    float: left;
+    
+    .searchbox {
+        display: block;
+        float: right;
+    }
 }
 
 .postit {
@@ -32,7 +58,7 @@
     position: relative;
     border: 1px solid #E8E8E8;
     border-top: 20px solid #fdfd86 !important;
-    font-family: 'Reenie Beanie';
+    font-family: @handwrittingFont;
     font-size: 30px;
     -webkit-border-bottom-right-radius: 60px 5px;
     -moz-border-bottom-right-radius: 60px 5px;
@@ -65,34 +91,4 @@
     -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
     -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
     transform: matrix(-1, -0.1, 0, 1, 0, 0);
-}
-.rotate-1 {
-    -webkit-transform: rotate(-1deg);
-    -moz-transform: rotate(-1deg);
-    -o-transform: rotate(-1deg);
-}
-.rotate1 {
-    -webkit-transform: rotate(1deg);
-    -moz-transform: rotate(1deg);
-    -o-transform: rotate(1deg);
-}
-.rotate-2 {
-    -webkit-transform: rotate(-2deg);
-    -moz-transform: rotate(-2deg);
-    -o-transform: rotate(-2deg);
-}
-.rotate2 {
-    -webkit-transform: rotate(2deg);
-    -moz-transform: rotate(2deg);
-    -o-transform: rotate(2deg);
-}
-.rotate-3 {
-    -webkit-transform: rotate(-3deg);
-    -moz-transform: rotate(-3deg);
-    -o-transform: rotate(-3deg);
-}
-.rotate3 {
-    -webkit-transform: rotate(3deg);
-    -moz-transform: rotate(3deg);
-    -o-transform: rotate(3deg);
 }

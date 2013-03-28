@@ -21,3 +21,15 @@ edgeBudModule.config(['$routeProvider', function($routeProvider) {
 	  	  when('/projects/:id', {templateUrl: 'views/project.html', controller: "ProjectDetailsController"}).
 	      otherwise({redirectTo: '/projects'});
 	}]);
+
+window.blabla = function() {
+	$(".challenge_inline[data-title]").each(function(i, elem) {
+		var text = "";
+		var timer = setInterval(function() {
+		  text = $(elem).attr("data-title").substr(0,text.length+1);
+		  $(elem).html(text);
+		  if(text.length === $(elem).attr("data-title").length)
+		    clearInterval(timer);
+		}, 50);
+	});
+};
