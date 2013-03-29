@@ -78,9 +78,9 @@
 										<span class="reward_box {{task.reward_type}}">{{task.reward}}</span>
 									</td>
 								</tr>
-								<tr>
+								<tr ng-hide="!task.text_detail && !task.reward_detail">
 									<td class="task_icon"></td>
-									<td class="text_detail">{{task.text_detail}}</td>
+									<td class="text_detail"><i class="icon-hand-right" ng-hide="!task.text_detail"></i>&nbsp;&nbsp;{{task.text_detail}}</td>
 									<td class="reward_detail">{{task.reward_detail}}</td>
 								</tr>
 							</tbody>
