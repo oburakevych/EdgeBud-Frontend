@@ -2,13 +2,21 @@
 
 .eb_instructions{
 	top:0px;
-	margin-top:-30px;
-    margin-bottom:-15px;
+	margin-top:-35px;
+    margin-bottom:-5px;
 	z-index:850;
 }
 
-.rotated_container{
-	text-align:center;
+.instruction_left{
+    height:176px;
+    border-right: 1px dashed @lineColor;
+}
+
+.instruction_step{
+    font-size:100px;
+    padding-right: 12px;
+    padding-top: 8px;
+    vertical-align: middle;
 }
 
 .company_instructions{
@@ -20,31 +28,77 @@
 }
 
 .challenge_instructions{
-    width: 360px;
+    width: 370px;
     min-height: 100px;
     max-height: 100px;
-    margin: 25px auto;
+    margin: 30px auto 20px auto;
+}
+
+.reward_focus{
+    color:rgba(0,179,15,1);
+    font-family:@handwrittingFontBold;
+}
+
+.fork_focus{
+    color:rgba(0, 136, 204,1);
+    font-family:@handwrittingFontBold;
+}
+
+.eb_add_project {
+    .centered;
+}
+
+    
+.load_more {
+    display: block;
+    width: 100%;
+    float: right;
+    padding-bottom: 30px;
+    
+    a {
+        padding: 10px;
+        margin: 10px;
+        font-size: 120%;
+    }
+}
+
+.eb_toolbar { 
+    width: 100%;
+    margin: 10px 36px 36px 36px;
+    display: block;
+    float: left;
+    
+    .searchbox {
+        display: block;
+        float: right;
+    }
 }
 
 .postit {
+    font-family: @handwrittingFont;
+    font-size: 30px;
+    line-height: 30px;
+    color: rgba(60,60,60,1);
     text-align: center;
     padding-top: 0px;
     position: relative;
     border: 1px solid #E8E8E8;
-    border-top: 20px solid #fdfd86 !important;
-    font-family: 'Reenie Beanie';
-    font-size: 30px;
+    box-shadow: 0px 2px 7px -2px;
+
+    @postitColor1 : rgba(255,255,200,1);
+    @postitColor2 : rgba(255,255,250,1);
+    border-top: 20px solid @postitColor1 !important;
     -webkit-border-bottom-right-radius: 60px 5px;
     -moz-border-bottom-right-radius: 60px 5px;
     -o-border-bottom-right-radius: 60px 5px;
     display: inline-block;
-    background: rgb(255,255,136); /* Old browsers */
-    background: -moz-linear-gradient(-45deg, rgba(255,255,136,1) 77%, rgba(255,255,214,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(77%,rgba(255,255,136,1)), color-stop(100%,rgba(255,255,214,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(-45deg, rgba(255,255,136,1) 77%,rgba(255,255,214,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(-45deg, rgba(255,255,136,1) 77%,rgba(255,255,214,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(-45deg, rgba(255,255,136,1) 77%,rgba(255,255,214,1) 100%); /* IE10+ */
-    background: linear-gradient(-45deg, rgba(255,255,136,1) 77%,rgba(255,255,214,1) 100%); /* W3C */
+    background: @postitColor1; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, @postitColor1 77%, @postitColor2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(77%,@postitColor1), color-stop(100%,@postitColor2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, @postitColor1 77%,@postitColor2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, @postitColor1 77%,@postitColor2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, @postitColor1 77%,@postitColor2 100%); /* IE10+ */
+    background: linear-gradient(-45deg, @postitColor1 77%,@postitColor2 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='#ffff88',GradientType=0 ); /* IE6-9 fallback on horizontal gradient */
 }
 .postit:after {
@@ -65,34 +119,4 @@
     -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
     -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
     transform: matrix(-1, -0.1, 0, 1, 0, 0);
-}
-.rotate-1 {
-    -webkit-transform: rotate(-1deg);
-    -moz-transform: rotate(-1deg);
-    -o-transform: rotate(-1deg);
-}
-.rotate1 {
-    -webkit-transform: rotate(1deg);
-    -moz-transform: rotate(1deg);
-    -o-transform: rotate(1deg);
-}
-.rotate-2 {
-    -webkit-transform: rotate(-2deg);
-    -moz-transform: rotate(-2deg);
-    -o-transform: rotate(-2deg);
-}
-.rotate2 {
-    -webkit-transform: rotate(2deg);
-    -moz-transform: rotate(2deg);
-    -o-transform: rotate(2deg);
-}
-.rotate-3 {
-    -webkit-transform: rotate(-3deg);
-    -moz-transform: rotate(-3deg);
-    -o-transform: rotate(-3deg);
-}
-.rotate3 {
-    -webkit-transform: rotate(3deg);
-    -moz-transform: rotate(3deg);
-    -o-transform: rotate(3deg);
 }

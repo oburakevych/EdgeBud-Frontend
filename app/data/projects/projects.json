@@ -1,6 +1,8 @@
 [
   { "company" : {
-      "name" : "Water Doping for Cars",
+      "name" : "",
+      "hide_name": false,
+      "baseline" : "Water doping for cars",
       "url" : null,
       "location" : "OpenSource Innovation"
     },
@@ -22,62 +24,36 @@
         }
       ]
     },
-    "rewards":[
-      {
-        "btn_type":"btn-danger",
-        "type":"Rewards",
-        "unit":"$",
-        "figure":"1800",
-        "text":"for grabs",
-        "icon":"icon-star icon-white"
-      },
-      {
-        "btn_type":"btn-success",
-        "type":"Opportunities",
-        "unit":"",
-        "figure":"3",
-        "text":"branch openings",
-        "icon":"icon-map-marker"
-      }
-    ],
-    "challenges" : [
-      { "description" : "Igtimi doesn't how to grow into different industries",
-        "icon":"tools.png",
-        "top_tasks":[
-          {
-            "type":"top",
-            "name":"Recommend a local partner",
-            "contributors":24
-          },
-          {
-            "type":"top",
-            "name":"Share market insight on your industry",
-            "contributors":5
-          }
-        ],
-        "more_tasks":[]
-      },
-      { "description" : "Igtimi needs you to expand at the international level",
-        "icon":"network.png",
-        "top_tasks":[
-          {
-            "type":"top",
-            "name":"Apply to become a local partner",
-            "contributors":3
-          }
-        ],
-        "more_tasks":[
-          {
-            "type":"additional",
-            "name":"blablabla",
-            "contributors":16
-          }
-        ]
-      }
-    ]
+    "challenge" : {
+      "title":"How can you contribute to the development of this technology at your local level ?",
+      "tasks": [
+        {
+          "icon":"icon-share",
+          "text":"Share a contact that could be usefull",
+          "reward":"$400",
+          "reward_intro":"Win",
+          "reward_type":"money_reward",
+          "text_detail":"Potential partner, customer, competitor, ...",
+          "reward_detail":"1st price"
+        },
+        {
+          "icon":"icon-user",
+          "text":"Apply to open a local branch",
+          "reward":"Open innovation",
+          "reward_intro":"",
+          "reward_type":"fork_reward"
+        }
+      ]
+    },
+    "meta":{
+      "contributions":26,
+      "total_reward":"$ 2600"
+    }
   },
-   { "company" : {
-      "name" : "Water Doping for Cars",
+  { "company" : {
+      "name" : "Eyeka",
+      "hide_name": false,
+      "baseline" : "Crowdsourcing ad videos",
       "url" : null,
       "location" : "OpenSource Innovation"
     },
@@ -99,58 +75,36 @@
         }
       ]
     },
-    "rewards":[
-      {
-        "btn_type":"btn-danger",
-        "type":"Rewards",
-        "unit":"$",
-        "figure":"1800",
-        "text":"for grabs",
-        "icon":"icon-star icon-white"
-      },
-      {
-        "btn_type":"btn-success",
-        "type":"Opportunities",
-        "unit":"",
-        "figure":"3",
-        "text":"branch openings",
-        "icon":"icon-map-marker"
-      }
-    ],
-    "challenges" : [
-      { "description" : "Igtimi doesn't how to grow into different industries",
-        "icon":"tools.png",
-        "top_tasks":[
-          {
-            "type":"top",
-            "name":"Recommend a local partner",
-            "contributors":24
-          },
-          {
-            "type":"top",
-            "name":"Share market insight on your industry",
-            "contributors":5
-          }
-        ],
-        "more_tasks":[]
-      },
-      { "description" : "Igtimi needs you to expand at the international level",
-        "icon":"network.png",
-        "top_tasks":[
-          {
-            "type":"top",
-            "name":"Apply to become a local partner",
-            "contributors":3
-          }
-        ],
-        "more_tasks":[
-          {
-            "type":"additional",
-            "name":"blablabla",
-            "contributors":16
-          }
-        ]
-      }
-    ]
+    "challenge" : {
+      "title":"How can you contribute to the development of this technology at your local level ?",
+      "tasks": [
+        {
+          "icon":"icon-share",
+          "text":"Share a contact that could be usefull",
+          "reward":"$ 400",
+          "reward_intro":"Win",
+          "reward_type":"money_reward"
+        },
+        {
+          "icon":"icon-pencil",
+          "text":"Suggest new development ideas",
+          "reward":"$ 1000",
+          "reward_intro":"Win",
+          "reward_type":"money_reward"
+        },
+        {
+          "icon":"icon-user",
+          "text":"Apply to open a local branch",
+          "reward":"Website + Mentorship",
+          "reward_intro":"",
+          "reward_type":"fork_reward"
+        }
+
+      ]
+    },
+    "meta":{
+      "contributions":26,
+      "total_reward":"$ 2600"
+    }
   }
 ]

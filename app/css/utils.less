@@ -1,11 +1,19 @@
 @bgColor: white;
 @borderColor: lighten(black, 50%);
 @textColor: lighten(black, 20%);
-@darkColor: lighten(black, 30%);  /*#4A4A4A /*#F8F8F8*/
+@darkColor: lighten(black, 30%);
 @titleBgColor: #f6f8f2;
-@contrastColor: yellow; /*rgb(51, 51, 51) #00B30F*/
+@contrastColor: yellow;
 @focusColor: #00B30F;
+@lineColor:rgb(190, 190, 190);
+
 @empty: "";
+
+@standardFont:'Helvetica Neue';
+@handwrittingFont : "handwritting_2";
+@handwrittingFontBold : "handwritting_2_bold";
+@typewritterFont: "Helvetica Neue";
+
 // accessing JavaScript to get the current height of the body
 @clientHeight: `document.body.clientHeight`;
 
@@ -37,4 +45,44 @@
 	color: @focusColor;
 	font-style:italic;
 	font-weight:normal;
+}
+
+.rotate0 {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+.rotate-1 {
+    -webkit-transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
+    -o-transform: rotate(-1deg);
+}
+.rotate1 {
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+}
+.rotate-2 {
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+}
+.rotate2 {
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+}
+.rotate-3 {
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+}
+.rotate3 {
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+}
+
+.rotated_container{
+	text-align:center;
 }
