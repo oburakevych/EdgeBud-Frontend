@@ -1,3 +1,24 @@
+<script type="text/javascript">
+	$('.tb_project').hover(
+		function(){
+			//$(this).find('.challenge_card').removeClass("challenge_card_non_hover").addClass("challenge_card_hover");
+			/*			
+			var rColor = 117;
+			var gColor = 209;
+			var timer = setInterval(function() {
+				$(this).find('.challenge_title').css("text-shadow","0px 0px 12px rgba("+rColor+","+gColor+",255,1)");
+				rColor = rColor + 23;
+				gColor = gColor + 8;
+				var attrib = $(this).find('.challenge_title').css("text-shadow");
+				alert(attrib);
+				if(rColor === 255 ) clearInterval(timer);
+			}, 50);*/
+		},
+		function(){
+			//$(this).find('.challenge_card').removeClass("challenge_card_hover").addClass("challenge_card_non_hover");
+		}
+	);
+</script>
 <div ng-controller="ProjectController" class="eb_project">
 	<div class="span10 paper tb_project">
 		<!--<p class="header">{{project.project_detail.title}}</p>-->
@@ -5,7 +26,7 @@
 			<div class="span6 company">
 				<div class="company_header">
 					<span class="company_name" eb-log-user-action="Project Company Name" eb-show-action-dialog="false">
-						<a ng-hide="project.company.hide_name" href="#">{{project.company.name}}</a>
+						<a ng-hide="!project.company.name || project.company.hide_name" href="{{project.company.url}}">{{project.company.name}}</a>
 						<span ng-hide="!project.company.name || project.company.hide_name">&nbsp;-&nbsp;</span>
 						<span>{{project.company.baseline}}</span>
 					</span>
@@ -36,52 +57,50 @@
 				</div>
 			</div>
 			<div class="span6 challenges">
-				<div class="rotate0 rotated_container">
-					<div class="challenge_postit">How can you contribute to the development of this technology at your local level?</div>
-				</div>
-				
-				<!--<div class="rewards" ng-repeat="reward in project.rewards">
-				  <span style="font-family: 'Reenie Beanie'; font-size:25px;">{{reward.type}}:&nbsp;</span>
-				  <button  class="btn {{reward.btn_type}}" eb-log-user-action="Rewards Figure">
-				  	{{reward.unit}}<strong>{{reward.figure}}</strong>&nbsp;{{reward.text}}&nbsp;<i class="{{reward.icon}}"></i>
-				  </button>
-				</div>
-				<div class="media list_challenges" ng-repeat="challenge in project.challenges">
-					<a class="pull-left" href="#" eb-log-user-action="Challenge">
-						<img class="media-object challenge_icon" ng-src="img/challenges/{{challenge.icon}}">
-					</a>
-					<div class="media-body">
-						<h5 class="challenge_description">{{challenge.description}}</h5>
-						<div class="media actions">
-							<table width="100%">
-								<tbody>
-									<tr class="action" ng-repeat="task in challenge.top_tasks | filter:{'type':'top'}">
-										<td>
-											<i class="icon-chevron-right" eb-log-user-action="Challenge Task"></i>
-											<a href="#">{{task.name}}</a>
-										</td>
-										<td align="right">
-											<a href="#">{{task.contributors}}&nbsp;<i class="icon-user"></i></a>
-										</td>
-										<td><button class="btn btn-small {{task.reward_btn}}">{{task.reward}}</button></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-
-						<div class="media actions" ng-hide="challenge.more_tasks.length == 0">
-							<table width="100%">
-								<tbody>
-									<tr>
-										<td><i class="icon-chevron-right"></i>
-											<a href="#" eb-log-user-action="Challenges See More Actions"><em>more actions ...</em></a>
-										</td>
-									</tr>
-								</tbody>
-							</table>
+				<div class="challenges_container">
+					<div class="rotate0 rotated_container">
+						<div class="challenge_card challenge_card_hover">
+							<span class="challenge_title">{{project.challenge.title}}</span>
 						</div>
 					</div>
-				</div>-->
+					<div class="challenge_tasks">
+						<table width="98%" ng-repeat="task in project.challenge.tasks">
+							<tbody>
+								<tr>
+									<td class="task_icon">
+										<i class="{{task.icon}}"></i>
+									</td>
+									<td class="task_text">
+										{{task.text}}
+									</td>
+									<td class="task_reward">
+										<span class="reward_box {{task.reward_type}}" rowspan="2">{{task.reward}}</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="task_icon"></td>
+									<td class="task_detail">{{task.detail}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="challenge_footer">
+					<table width="100%">
+						<tbody>
+							<tr>
+								<td class="contributions">
+									<span class="contribution_number">{{project.meta.contributions}}</span> contributions
+								</td>
+								<td class="main_reward">
+									Total rewards
+									<span class="main_reward_box" style="font-size:16px">{{project.meta.total_reward}}</span>
+								</td>	
+							</tr>
+						</tbody>
+					</table>
+				</div>		
+				
 			</div>
 		</div>
 		<!--<h6 class="seemore">See More&nbsp;&nbsp;<i class="icon-plus"></i></h6>-->
