@@ -25,8 +25,8 @@
 		<div class="row-fluid">
 			<div class="span6 company">
 				<div class="company_header">
-					<span class="company_name" eb-log-user-action="Project Company Name" eb-show-action-dialog="false">
-						<a ng-hide="!project.company.name || project.company.hide_name" href="{{project.company.url}}">{{project.company.name}}</a>
+					<span class="company_title" eb-log-user-action="Project Company Name" eb-show-action-dialog="false">
+						<a class="company_name" ng-hide="!project.company.name || project.company.hide_name" href="{{project.company.url}}">{{project.company.name}}</a>
 						<span ng-hide="!project.company.name || project.company.hide_name">&nbsp;-&nbsp;</span>
 						<span>{{project.company.baseline}}</span>
 					</span>
@@ -64,22 +64,24 @@
 						</div>
 					</div>
 					<div class="challenge_tasks">
-						<table width="98%" ng-repeat="task in project.challenge.tasks">
+						<table width="99%" ng-repeat="task in project.challenge.tasks">
 							<tbody>
 								<tr>
 									<td class="task_icon">
-										<i class="{{task.icon}}"></i>
+										<a href=""><i class="{{task.icon}}"></i></a>
 									</td>
 									<td class="task_text">
-										{{task.text}}
+										<a href="">{{task.text}}</a>
 									</td>
 									<td class="task_reward">
-										<span class="reward_box {{task.reward_type}}" rowspan="2">{{task.reward}}</span>
+										<span class="reward_intro">{{task.reward_intro}}</span>&nbsp;
+										<span class="reward_box {{task.reward_type}}">{{task.reward}}</span>
 									</td>
 								</tr>
 								<tr>
 									<td class="task_icon"></td>
-									<td class="task_detail">{{task.detail}}</td>
+									<td class="text_detail">{{task.text_detail}}</td>
+									<td class="reward_detail">{{task.reward_detail}}</td>
 								</tr>
 							</tbody>
 						</table>

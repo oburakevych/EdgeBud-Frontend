@@ -31,18 +31,16 @@
           "icon":"icon-share",
           "text":"Share a contact that could be usefull",
           "reward":"$400",
-          "reward_type":"money_reward"
-        },
-        {
-          "icon":"icon-pencil",
-          "text":"Suggest new development ideas",
-          "reward":"$400",
-          "reward_type":"money_reward"
+          "reward_intro":"Win",
+          "reward_type":"money_reward",
+          "text_detail":"Potential partner, customer, competitor, ...",
+          "reward_detail":"1st price"
         },
         {
           "icon":"icon-user",
-          "text":"Apply to open a local business",
-          "reward":"3forks",
+          "text":"Apply to open a local branch",
+          "reward":"Open innovation",
+          "reward_intro":"",
           "reward_type":"fork_reward"
         }
       ]
@@ -83,21 +81,25 @@
         {
           "icon":"icon-share",
           "text":"Share a contact that could be usefull",
-          "reward":"$400",
+          "reward":"$ 400",
+          "reward_intro":"Win",
           "reward_type":"money_reward"
         },
         {
           "icon":"icon-pencil",
           "text":"Suggest new development ideas",
-          "reward":"$400",
+          "reward":"$ 1000",
+          "reward_intro":"Win",
           "reward_type":"money_reward"
         },
         {
           "icon":"icon-user",
-          "text":"Apply to open a local business",
-          "reward":"3jobs",
-          "reward_type":"job_reward"
+          "text":"Apply to open a local branch",
+          "reward":"Website + Mentorship",
+          "reward_intro":"",
+          "reward_type":"fork_reward"
         }
+
       ]
     },
     "meta":{
