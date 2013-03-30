@@ -1,5 +1,11 @@
-<div ng-controller="ProjectDetailsController" class="eb_project">
+<div ng-controller="ProjectDetailsController" class="eb_project_details">
 	<ul class="thumbnails">
+		<li class="span1">
+			<a>Step 1</a>
+			<a>Step 2</a>
+			<a>Step 3</a>
+			<a>Step 4</a>
+		</li>
 		<li class="span9">
 			<div class="thumbnail content">
 				<div class="body">
@@ -11,6 +17,8 @@
 						<li ng-repeat="opportunity in project.opportunities">{{opportunity.name}}</li>
 					</ul>
 				</div>
+			</div>
 		</li>
+
 	</ul>
 </div>

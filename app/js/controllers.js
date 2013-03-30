@@ -41,8 +41,10 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, S
 	});
 } 
 
-function ProjectsController($scope, ProjectResource) {
+function ProjectsController($scope, $rootScope, ProjectResource) {
+	$rootScope.showHero = true;
 	$scope.projects = ProjectResource.query();
+
 
 	var splitIntoRows = function(array, columns) {
 		if (array.length <= columns) {
@@ -146,8 +148,9 @@ function ProjectController($scope, $rootScope, UserActionResource, ProjectResour
 	$scope.getCompanies();
 }
 	
-function ProjectDetailsController($scope, $routeParams, ProjectResource) {
+function ProjectDetailsController($scope, $rootScope, $routeParams, ProjectResource) {
 	$scope.project = ProjectResource.get({projectId: $routeParams.id});
+	$rootScope.showHero = false;
 
 }
 
