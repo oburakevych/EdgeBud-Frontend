@@ -20,3 +20,7 @@ projectModule.factory('ProjectResource', function($resource) {
 		}
 	);
 });
+
+projectModule.factory('ProjectDetailsResource', function($resource) {
+	return $resource(edgeBudModule.BASE_URL + '/projects/:projectId/details.json');
+});

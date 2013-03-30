@@ -148,9 +148,11 @@ function ProjectController($scope, $rootScope, UserActionResource, ProjectResour
 	$scope.getCompanies();
 }
 	
-function ProjectDetailsController($scope, $rootScope, $routeParams, ProjectResource) {
-	$scope.project = ProjectResource.get({projectId: $routeParams.id});
+function ProjectDetailsController($scope, $rootScope, $routeParams, ProjectResource, ProjectDetailsResource) {
 	$rootScope.showHero = false;
+	$scope.project = ProjectResource.get({projectId: $routeParams.id}, function() {
+		$scope.project.details = ProjectDetailsResource.get({projectId: $routeParams.id});
+	});
 
 }
 
