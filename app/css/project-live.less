@@ -45,7 +45,7 @@
 			border-radius: 12px;
 			background-color: @focusColor;
 			min-height: 200px;
-			padding: 20px;
+			padding: 15px;
 
 			.key_label{
 				color:white;
@@ -59,9 +59,43 @@
 		}
 
 		.fresh_entry{
+			background-color: lighten(black, 85%);
 			border-radius: 12px;
-			background-color: @lightColor;
-			padding: 20px;
+			margin:10px 0px;
+
+			.entry_body{
+				border-radius: 12px;
+				background-color: @lightColor;
+				padding: 10px 15px 0px 15px;
+				margin:0px;
+				.vision{
+					font-size:12px;
+				}
+
+				.vision_title{
+					font-size:20px;
+					font-weight: bold;
+				}
+
+				.supporting_data{
+					font-size: 13px;
+				}
+
+				.supporting_data_title{
+					font-size:15px;
+					font-weight: bold;
+					margin: 6px 0px 4px 0px;
+				}
+
+				.usefull_vote{
+					font-size: 18px;
+					font-weight: bold;
+				}
+			}
+			.entry_more{
+				text-align: center;
+				padding: 3px 15px;
+			}
 		}
 	}
 }
