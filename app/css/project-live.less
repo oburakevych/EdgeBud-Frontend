@@ -5,20 +5,20 @@
 }
 
 .workflow{
-	margin:0px;
-	//background-color: @darkColor;
-	color:white;
+	margin:10px 0px 0px 20px;
 
-	li {
-	    padding: 0.5em 1em;
-	    //border-bottom-right-radius: 30px;
-	    //border-top-right-radius:  30px;
-	    border-right: 1px solid @lineColor;
+	.flow_step {
+	    padding: 0.5em 1.5em;
+	    border-radius: 6px;
+	    background-color:@titleBgColor;
+	    text-align: center;
+	    vertical-align: middle;
+
 	
 		a {
 			color:@darkColor;
-			margin-top:auto;
-			margin-bottom: auto;
+			margin:auto;
+			width:100px;
 			height: 50px;
 		    display:table-cell;
 			vertical-align: middle;
@@ -26,45 +26,78 @@
 			text-decoration: none;
 		}
 
+		/*
 		a:hover{	
 			color: @focusColor;
 			font-weight: bold;
 			font-size: 18px;
 			font-weight: bold;
 		}
+		*/
 	}
-	
-	li:hover{
-		//border-right: 3px solid @focusColor;
+
+	.ongoing{
+    	a {color:white;}
+    	background-color: @focusColor;
+    	font-weight: bold;
+		font-size: 18px;
+		font-weight: bold;
+    }
+}
+
+.live_header{
+	//background-color: #eef2ea;
+	height: 80px;
+
+	.project_title{
+		text-align: center;
 	}
 }
 
 .live_body {
+
+	background-color: @titleBgColor;
+	padding:20px;
+	border-radius: 12px;
+
 	.live_column{
 		.top_action{
-			border-radius: 12px;
+			border-radius: 6px;
 			background-color: @focusColor;
 			min-height: 200px;
 			padding: 15px;
 
 			.key_label{
 				color:white;
-				font-size: 24px;
 				padding:10px;
+
+				.figure{
+					font-size: 44px;
+					font-weight: bold;
+					margin-bottom: 14px;
+				}
+
+				.text{
+					font-size: 16px;
+				}
 			}
 
 			.submit_new{
-				margin-top: 20px;
+				margin-top: 10px;
 			}
 		}
 
+		.discover_contribution{
+			text-align: center;
+		}
+
 		.fresh_entry{
-			background-color: lighten(black, 85%);
-			border-radius: 12px;
+			background-color: lighten(black, 80%);
+			border-radius: 6px;
 			margin:10px 0px;
 
 			.entry_body{
-				border-radius: 12px;
+				border-radius: 6px;
 				background-color: @lightColor;
 				padding: 10px 15px 0px 15px;
 				margin:0px;

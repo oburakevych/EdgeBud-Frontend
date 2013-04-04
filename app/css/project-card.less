@@ -7,7 +7,7 @@
 	}
 
 	a:hover{
-		color:#00B30F;
+		color:@focusColor;
 	}
 
 	.content {
@@ -52,7 +52,7 @@
 
 		.company_header{
 			text-align:center;
-			border-bottom: dashed 1px rgb(221, 221, 221);
+			border-bottom: dashed 1px @lineColor;
 			padding-bottom:5px;
 			padding-top:10px;
 			background-color:@titleBgColor;
@@ -88,7 +88,7 @@
 		}
 
 		.metrics_footer{
-			border-top: dashed 1px rgb(221, 221, 221);
+			border-top: dashed 1px @lineColor;
 			margin-top:10px;
 			padding-top:4px;
 			padding-bottom:5px;
@@ -236,11 +236,11 @@
 		}
 		
 		.money_reward{
-			background-color: rgba(0,179,15,1);
+			background-color: @focusColor;
 		}
 
 		.fork_reward{
-			background-color: rgba(0, 136, 204,1);
+			background-color: @focusColor2;
 		}
 
 		.text_detail{
@@ -300,7 +300,7 @@
 		.main_reward_box{
 			font-family: @standardFont;
 			border-radius: 4px;
-			background-color: rgba(0,179,15,1);
+			background-color: @focusColor;
 			color:white;
 			vertical-align: middle;
 			padding:4px 5px;
