@@ -1,0 +1,67 @@
+@import "utils.less";
+
+.project_timeline{
+	position:relative;
+}
+
+.workflow{
+	margin:0px;
+	//background-color: @darkColor;
+	color:white;
+
+	li {
+	    padding: 0.5em 1em;
+	    //border-bottom-right-radius: 30px;
+	    //border-top-right-radius:  30px;
+	    border-right: 1px solid @lineColor;
+	
+		a {
+			color:@darkColor;
+			margin-top:auto;
+			margin-bottom: auto;
+			height: 50px;
+		    display:table-cell;
+			vertical-align: middle;
+			text-align: center;
+			text-decoration: none;
+		}
+
+		a:hover{	
+			color: @focusColor;
+			font-weight: bold;
+			font-size: 18px;
+			font-weight: bold;
+		}
+	}
+	
+	li:hover{
+		//border-right: 3px solid @focusColor;
+	}
+}
+
+.live_body {
+	.live_column{
+		.top_action{
+			border-radius: 12px;
+			background-color: @focusColor;
+			min-height: 200px;
+			padding: 20px;
+
+			.key_label{
+				color:white;
+				font-size: 24px;
+				padding:10px;
+			}
+
+			.submit_new{
+				margin-top: 20px;
+			}
+		}
+
+		.fresh_entry{
+			border-radius: 12px;
+			background-color: @lightColor;
+			padding: 20px;
+		}
+	}
+}
