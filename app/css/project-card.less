@@ -55,7 +55,7 @@
 			border-bottom: dashed 1px @lineColor;
 			padding-bottom:5px;
 			padding-top:10px;
-			background-color:@titleBgColor;
+			background-color:@bgColor2;
 			opacity:0.9;
 			border-top-left-radius:6px;
 		}
@@ -92,7 +92,7 @@
 			margin-top:10px;
 			padding-top:4px;
 			padding-bottom:5px;
-			background-color:@titleBgColor;
+			background-color:@bgColor2;
 			opacity:0.9;
 			border-bottom-left-radius:6px;
 		}
@@ -138,28 +138,41 @@
 			position:relative;
 			left:8px;
 			bottom:0px;
-			height:222px;
+			height:232px;
 			max-width:465px;
 			margin-right: 0px;
 			border-left:1px solid #F8D3D3;
-		}
+		
 
-		.challenge_card{
-			text-align:middle;
+			.mentor_frame{
+				margin:-5px 0px 0px -20px;
+				z-index: 100;
+			
+				.mentor_img{
+					z-index: inherit;
+					height:70px;
+					border: 2px solid @lineColor;
+					box-shadow: 0px 0px 18px -5px;
+				}					
+			}
 
-			max-width:436px;
-			padding: 4px 12px 4px 12px;
-		    margin: 10px auto 0 -10px;
+			.challenge_card{
+				text-align:middle;
+				max-width:410px;
+				padding: 4px 12px 4px 12px;
+			    margin: 10px -10px 0 -25px;
 
-			box-shadow: 0px 0px 18px -5px;
+				box-shadow: 0px 0px 18px -5px;
 
-			border-radius: 4px;
-			border: 1px solid #E8E8E8;
-		}
+				border-radius: 4px;
+				border: 1px solid #E8E8E8;
+				z-index:-1;
+			}
 
-		.challenge_card_non_hover{
-			background-color: @titleBgColor;
-			opacity:0.9;
+			.challenge_card_non_hover{
+				background-color: @bgColor2;
+				opacity:0.9;
+			}
 		}
 
 		.challenge_card_hover{
@@ -191,13 +204,13 @@
 
 
 		.challenge_tasks{
-			margin: 14px 0px auto 3px;
+			margin: 31px 0px auto 3px;
 			overflow: hidden;
 			height:100px;
 		}
 
 		.task_icon{
-			width: 6%;
+			//width: 6%;
 			padding: 0px 3px;
 			vertical-align: middle;
 		}
@@ -243,6 +256,9 @@
 			background-color: @focusColor2;
 		}
 
+		.detail_icon{
+		}
+
 		.text_detail{
 			font-size: 14px;
 			line-height: 33px;
@@ -279,17 +295,22 @@
 			vertical-align: bottom;
 		}
 
-		.contributions{
-			width:60%;
+		.contributors{
+			//width:60%;
 			text-align: left;
 		}
 
-		.contribution_number{
+		.remaining_time{
+			//width:60%;
+			text-align: center;
+		}
+
+		.key_figure{
 			color:@focusColor;
 		}
 
-		.main_reward{
-			width:40%;
+		.step_reward{
+			//width:40%;
 			text-align:right;
 			border: none;
 			font-size: 22px;
@@ -297,7 +318,7 @@
 			text-align: right;
 		}
 
-		.main_reward_box{
+		.reward_box{
 			font-family: @standardFont;
 			border-radius: 4px;
 			background-color: @focusColor;

@@ -25,86 +25,32 @@
       ]
     },
     "challenge" : {
-      "title":"How can you contribute to the development of this technology at your local level ?",
+      "title":"Use my technology to create branches!",
+      "mentor_img":"larry.jpg",
       "tasks": [
         {
-          "icon":"icon-share",
-          "text":"Share a contact that could be usefull",
-          "reward":"$400",
-          "reward_intro":"Win",
+          "icon":"",
+          "text":"STEP1 : Suggest a new market",
+          "reward":"+10 influence",
+          "reward_intro":"Earn",
           "reward_type":"money_reward",
-          "text_detail":"Potential partner, customer, competitor, ...",
-          "reward_detail":"1st price"
+          "detail_icon":"",
+          "text_detail":"eg. : Apply techno in Rio to motorbikes",
+          "reward_detail":""
         },
         {
-          "icon":"icon-user",
-          "text":"Apply to open a local branch",
-          "reward":"Open innovation",
-          "reward_intro":"",
+          "icon":"icon-plus-sign",
+          "text":"Then add supporting data",
+          "reward":"+3 influence",
+          "reward_intro":"Earn",
           "reward_type":"fork_reward"
         }
       ]
     },
     "meta":{
-      "contributions":26,
-      "total_reward":"$ 2600"
-    }
-  },
-  { "company" : {
-      "name" : "Eyeka",
-      "hide_name": false,
-      "baseline" : "Crowdsourcing ad videos",
-      "url" : null,
-      "location" : "OpenSource Innovation"
-    },
-    "project_detail" : {
-      "title" : "Help an America’s Cup Supplier of Connected Objects to Reach More Profitable Industrial Markets",
-      "description" : "The technology of water doping applies to any engine, and is largely unknown. The engine exhaust heat is used in a chamber to get a hot / cold self generating plasma",
-      "key_metrics" :[
-        {
-          "label":"2012 REVENUES",
-          "data":"3 M$"
-        },
-        {
-          "label":"KEY ASSET",
-          "data":"Multi-Use Device"
-        },
-        {
-          "label":"TOP CLIENT",
-          "data":"America's CUP"
-        }
-      ]
-    },
-    "challenge" : {
-      "title":"How can you contribute to the development of this technology at your local level ?",
-      "tasks": [
-        {
-          "icon":"icon-share",
-          "text":"Share a contact that could be usefull",
-          "reward":"$ 400",
-          "reward_intro":"Win",
-          "reward_type":"money_reward"
-        },
-        {
-          "icon":"icon-pencil",
-          "text":"Suggest new development ideas",
-          "reward":"$ 1000",
-          "reward_intro":"Win",
-          "reward_type":"money_reward"
-        },
-        {
-          "icon":"icon-user",
-          "text":"Apply to open a local branch",
-          "reward":"Website + Mentorship",
-          "reward_intro":"",
-          "reward_type":"fork_reward"
-        }
-
-      ]
-    },
-    "meta":{
-      "contributions":26,
-      "total_reward":"$ 2600"
+      "contributors":26,
+      "remaining_time":23,
+      "step_reward":"$ 2600"
     }
   }
 ]

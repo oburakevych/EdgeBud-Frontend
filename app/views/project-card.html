@@ -58,11 +58,17 @@
 			</div>
 			<div class="span6 challenges">
 				<div class="challenges_container">
-					<div class="rotate0 rotated_container">
-						<div class="challenge_card challenge_card_hover">
-							<span class="challenge_title">{{project.challenge.title}}</span>
+					<div class="row-fluid">
+						<div class="rotate2 span2 mentor_frame">
+							<img class="mentor_img" src="img/mentors/{{project.challenge.mentor_img}}"></img>
+						</div>
+						<div class="rotate0 rotated_container span10">
+							<div class="challenge_card challenge_card_hover">
+								<span class="challenge_title">"{{project.challenge.title}}"</span>
+							</div>
 						</div>
 					</div>
+					
 					<div class="challenge_tasks">
 						<table width="99%" ng-repeat="task in project.challenge.tasks">
 							<tbody>
@@ -79,8 +85,8 @@
 									</td>
 								</tr>
 								<tr ng-hide="!task.text_detail && !task.reward_detail">
-									<td class="task_icon"></td>
-									<td class="text_detail"><i class="icon-hand-right" ng-hide="!task.text_detail"></i>&nbsp;&nbsp;{{task.text_detail}}</td>
+									<td class="detail_icon"><i class="{{task.detail_icon}}"></i></td>
+									<td class="text_detail">{{task.text_detail}}</td>
 									<td class="reward_detail">{{task.reward_detail}}</td>
 								</tr>
 							</tbody>
@@ -91,12 +97,14 @@
 					<table width="100%">
 						<tbody>
 							<tr>
-								<td class="contributions">
-									<span class="contribution_number">{{project.meta.contributions}}</span> contributions
+								<td class="contributors">
+									<span class="key_figure">{{project.meta.contributors}}</span> contributors
 								</td>
-								<td class="main_reward">
-									Total rewards
-									<span class="main_reward_box" style="font-size:16px">{{project.meta.total_reward}}</span>
+								<td class="remaining_time">
+									<span class="key_figure">{{project.meta.remaining_time}}</span> days to go
+								</td>
+								<td class="step_reward">
+									<span class="reward_box" style="font-size:16px">{{project.meta.step_reward}}</span> to earn
 								</td>	
 							</tr>
 						</tbody>
