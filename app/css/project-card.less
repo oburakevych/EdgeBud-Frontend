@@ -2,415 +2,90 @@
 
 .eb_project {
 
-	a {
-		text-decoration: none;
+	h3 {
+		font-size:22px;
+		line-height: 30px;
+		margin: 0px;
 	}
 
-	a:hover{
-		color:@focusColor;
+}
+
+.first_stripe {
+
+	.step_number{
+	    font-size:100px;
+	    padding-right: 12px;
+	    padding-top: 8px;
+	    vertical-align: middle;
 	}
 
-	.content {
-		background-color: rgba(0, 0, 0, 0.015);
+	.step_1{
+
+		.postit{
+		    width: 290px;
+		    min-height: 100px;
+		    max-height: 100px;
+		    margin: 0px auto 0px auto;
+
+		    .focus_2{
+		    	font-weight: bold;
+		    }
+		}
+
+		.form_login{
+			width:266px;
+			margin: 10px auto;
+			padding: 16px 10px 10px 10px;
+			border: 3px @borderColor solid;
+			border-radius: 12px;
+
+			label {
+				float:left;
+
+				font-size: 22px;
+				line-height: 34px;
+				font-family: @handwrittingFont;
+			}
+
+			.field_input{
+			    display: block;
+			    overflow: hidden;
+			    padding: 0 10px 0 10px
+			}
+
+			input {
+				border:none;
+				border-bottom: dashed 1px @borderColor;
+				width: 100%;
+
+				font-size: 22px;
+				font-weight: bold;
+				font-family: @handwrittingFont;
+				color: @focusColor;
+			}
+
+			button {
+				font-size: 20px;
+				line-height: 26px;
+				//font-family: @handwrittingFont;
+				padding: 8xpx auto;
+				border-radius: 10px;
+				margin-top:15px;
+			}
+		}
 	}
 
-	.seemore {
-	    -moz-user-select: none;
-	    background-color: #FFFFFF;
-	    border-bottom-style: solid;
-	    border-right-style: solid;
-	    border-left-style: solid;
-	    border-top-style: none;
-	    border-color: rgb(221, 221, 221);
-	    border-with: 0px 1px 1px 1px;
-	    cursor: default;
-	    display: block;
-	    padding: 0px 2px 0px 2px;
-	    margin: 1px auto -24px auto;
-	    position: relative;
-	    text-align: center;
-	    color: #00B30F;
-	    width:100px;
-	    border-bottom-left-radius: 4px;
-	    border-bottom-right-radius: 4px;
-	    font-size: 14px;
+	.step_2{
+		.postit{
+		    width: 290px;
+		    min-height: 100px;
+		    max-height: 100px;
+		    margin: 0px auto 0px auto;
+		}
+	}
+
+	.small_card{
+		
 	}
 	
-	.tb_project{
-		margin:0px 0px 60px 0px;
-		padding:0px;
-		border: solid @lineColor 1px;
-		border-radius:6px;
-	}
-
-	.company{
-		border-right: solid 1px @lineColor;
-		background:white;
-		box-shadow: 6px 0px 8px -2px rgba(0, 0, 0, 0.15);
-		border-top-left-radius:6px;
-		border-bottom-left-radius:6px;
-
-		.company_header{
-			text-align:center;
-			border-bottom: dashed 1px @lineColor;
-			padding-bottom:5px;
-			padding-top:10px;
-			background-color:@bgColor2;
-			opacity:0.9;
-			border-top-left-radius:6px;
-		}
-
-		.company_title{
-			font-size:22px;
-			font-weight: bold;
-			text-rendering: optimizelegibility;
-			height:20px;
-		}
-
-		.company_name{
-		}
-
-		.company_intro{
-			margin-left:0px;
-			margin-top:10px;
-			padding-left:10px;
-		}
-
-		.company_media{
-		}
-
-		.description{
-			padding-right:15px;
-			font-size:13px;
-		}
-
-		.more_link{
-		}
-
-		.metrics_footer{
-			border-top: dashed 1px @lineColor;
-			margin-top:10px;
-			padding-top:4px;
-			padding-bottom:5px;
-			background-color:@bgColor2;
-			opacity:0.9;
-			border-bottom-left-radius:6px;
-		}
-			
-		.metric_pannel{
-			text-align:center;
-			padding-right:10px;
-		}
-
-		.metric_label{
-			font-size:12px;
-			color:rgb(117, 121, 111);
-		}
-
-		.metric_data{
-			font-size:13px;
-			color:rgb(11, 25, 2);
-			font-weight: bold;
-		}
-	}
-
-	.paper {
-		padding: 0px;
-		position: relative;
-		background: white;
-		background: -webkit-linear-gradient(top, #DFE8EC 0%, white 8%) 0 0px;
-		background: -moz-linear-gradient(top, #DFE8EC 0%, white 8%) 0 0px;
-		background: linear-gradient(top, #DFE8EC 0%, white 8%) 0 0px;
-		-webkit-background-size: 100% 33px;
-		-moz-background-size: 100% 33px;
-		-ms-background-size: 100% 33px;
-		background-size: 100% 33px;
-	}
-
-
-	.challenges{
-		position:relative;
-		left:0px;
-		bottom:0px;
-		color:@textColor;
-
-		.challenges_container{
-			position:relative;
-			left:8px;
-			bottom:0px;
-			height:232px;
-			max-width:465px;
-			margin-right: 0px;
-			border-left:1px solid #F8D3D3;
-		
-
-			.mentor_frame{
-				margin:-5px 0px 0px -20px;
-				z-index: 100;
-			
-				.mentor_img{
-					z-index: inherit;
-					height:70px;
-					border: 2px solid @lineColor;
-					box-shadow: 0px 0px 18px -5px;
-				}					
-			}
-
-			.challenge_card{
-				text-align:middle;
-				max-width:410px;
-				padding: 4px 12px 4px 12px;
-			    margin: 10px -10px 0 -25px;
-
-				box-shadow: 0px 0px 18px -5px;
-
-				border-radius: 4px;
-				border: 1px solid #E8E8E8;
-				z-index:-1;
-			}
-
-			.challenge_card_non_hover{
-				background-color: @bgColor2;
-				opacity:0.9;
-			}
-		}
-
-		.challenge_card_hover{
-			background: -moz-linear-gradient(-45deg, @postitColor1 60%, @postitColor2 100%); /* FF3.6+ */
-    		background: -webkit-gradient(linear, left top, right bottom, color-stop(77%,@postitColor1), color-stop(100%,@postitColor2)); /* Chrome,Safari4+ */
-		    background: -webkit-linear-gradient(-45deg, @postitColor1 60%,@postitColor2 100%); /* Chrome10+,Safari5.1+ */
-		    background: -o-linear-gradient(-45deg, @postitColor1 60%,@postitColor2 100%); /* Opera 11.10+ */
-		    background: -ms-linear-gradient(-45deg, @postitColor1 60%,@postitColor2 100%); /* IE10+ */
-		    background: linear-gradient(-45deg, @postitColor1 60%,@postitColor2 100%); /* W3C */
-			opacity:1;
-		}
-
-		.challenge_label{
-			font-family: @handwrittingFont;
-		}
-
-		.challenge_title{
-			font-family: @typewritterFont;
-			color: @darkColor;
-			line-height: 33px;
-			font-size: 20px;
-			font-weight: bold;
-		}
-
-		/*.challenge_title:hover{
-			text-shadow: 0px 0px 14px rgba(66,113,255,1);
-		}*/
-
-
-
-		.challenge_tasks{
-			margin: 31px 0px auto 3px;
-			overflow: hidden;
-			height:100px;
-		}
-
-		.task_icon{
-			//width: 6%;
-			padding: 0px 3px;
-			vertical-align: middle;
-		}
-
-		.task_text{
-			font-size: 16px;
-			line-height: 33px;
-			padding: 0px;
-			a {
-				color:@textColor;
-			}
-			a:hover{
-				color:#00B30F;
-			}
-		}
-
-		.task_reward{
-			font-size: 14px;
-			line-height: 24px;
-			text-align: right;
-			white-space: nowrap;
-		}
-
-		.reward_intro{
-			font-family: @handwrittingFont;
-			font-size: 16px;
-		}
-
-		.reward_box{
-			font-family: @standardFont;
-			border-radius: 4px;
-			height: 24px;
-			color:white;
-			vertical-align: middle;
-			padding: 3px 5px;
-		}
-		
-		.money_reward{
-			background-color: @focusColor;
-		}
-
-		.fork_reward{
-			background-color: @focusColor2;
-		}
-
-		.detail_icon{
-		}
-
-		.text_detail{
-			font-size: 14px;
-			line-height: 33px;
-			vertical-align: top;
-			color:lighten(black, 50%);
-			padding: 0px 0px 0px 10px;
-		}
-
-		.reward_detail{
-			padding: 0px 0px 0px 0px;
-
-			font-family: @handwrittingFont;
-			font-size: 18px;
-			line-height: 33px;
-			text-align: right;
-			white-space: nowrap;
-			vertical-align: top;			
-		}
-
-		.challenge_footer{
-			overflow:hidden;
-			background-color: white;
-			height: 29px;
-			border-bottom-right-radius: 6px;
-			margin:0px 0px 0px -24px;
-			padding: 5px 5px 5px 38px;
-			max-width:473px;
-			border-top: 1px solid @lineColor;
-			box-shadow: 6px 0px 8px -2px rgba(0, 0, 0, 0.15) inset;
-
-			font-family: @handwrittingFont;
-			font-size: 22px;
-			line-height: 28px;
-			vertical-align: bottom;
-		}
-
-		.contributors{
-			//width:60%;
-			text-align: left;
-		}
-
-		.remaining_time{
-			//width:60%;
-			text-align: center;
-		}
-
-		.key_figure{
-			color:@focusColor;
-		}
-
-		.step_reward{
-			//width:40%;
-			text-align:right;
-			border: none;
-			font-size: 22px;
-			line-height: 28px;
-			text-align: right;
-		}
-
-		.reward_box{
-			font-family: @standardFont;
-			border-radius: 4px;
-			background-color: @focusColor;
-			color:white;
-			vertical-align: middle;
-			padding:4px 5px;
-			max-width: 60px;
-		}
-	}
-}
-
-/* USELESS */
-
-.circle_circle::after {    
-	content: '';
-	display: block;
-	width: 20px;
-	height: 20px;
-	border-radius: 10px;
-	position: absolute;
-	background: rgba(255,255,255,1);
-	top: 5px;
-	left: 5px;
-	z-index: 10;
-	-webkit-box-shadow: 
-	    inset 2px 2px 5px rgba(125,125,125,1),  
-	    2px 50.1em 5px rgba(255,255,255,1), 0px 50em rgba(125,125,125,.75),  
-	    2px 90.1em 5px rgba(255,255,255,1), 0px 90em rgba(125,125,125,.5),
-	    2px 130.1em 5px rgba(255,255,255,1), 0px 130em rgba(125,125,125,.25);
-	-moz-box-shadow: 
-	    inset 2px 2px 5px rgba(125,125,125,1),  
-	    2px 50.1em 5px rgba(255,255,255,1), 0px 50em rgba(125,125,125,.75),  
-	    2px 90.1em 5px rgba(255,255,255,1), 0px 90em rgba(125,125,125,.5),
-	    2px 130.1em 5px rgba(255,255,255,1), 0px 130em rgba(125,125,125,.25);
-	box-shadow: 
-	    inset 2px 2px 5px rgba(125,125,125,1),  
-	    2px 50.1em 5px rgba(255,255,255,1), 0px 50em rgba(125,125,125,.75),  
-	    2px 90.1em 5px rgba(255,255,255,1), 0px 90em rgba(125,125,125,.5),
-	    2px 130.1em 5px rgba(255,255,255,1), 0px 130em rgba(125,125,125,.25);
-}
-
-.challenge_inline{
-	font-family: @handwrittingFontBold;
-	color:@focusColor;
-	text-align:middle;
-	font-size:27spx;
-	max-width:457px;
-	line-height:30px;
-	padding: 9px 1px 0px 1px;
-}
-
-.challenge_postit {
-	max-width:440px;
-	padding: 0 5px 5px 5px;
-    margin: -5px auto 0 -30px;
-    @postitColor1 : rgba(247,252,237,1);
-    @postitColor2 : rgba(247,250,252,1);
-    box-shadow: 0px 2px 7px -2px;
-
-    text-align: center;
-    position: relative;
-    border: 1px solid #E8E8E8;
-    border-top: 10px solid @postitColor1 !important;
-    -webkit-border-bottom-right-radius: 60px 5px;
-    -moz-border-bottom-right-radius: 60px 5px;
-    -o-border-bottom-right-radius: 60px 5px;
-    display: inline-block;
-    background: @postitColor1; /* Old browsers */
-    background: -moz-linear-gradient(-45deg, @postitColor1 77%, @postitColor2 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(77%,@postitColor1), color-stop(100%,@postitColor2)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(-45deg, @postitColor1 77%,@postitColor2 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(-45deg, @postitColor1 77%,@postitColor2 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(-45deg, @postitColor1 77%,@postitColor2 100%); /* IE10+ */
-    background: linear-gradient(-45deg, @postitColor1 77%,@postitColor2 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='#ffff88',GradientType=0 ); /* IE6-9 fallback on horizontal gradient */
-}
-.challenge_postit:after {
- 	z-index:-1;
-    content: "";
-    position: absolute;
-    right: -0px;
-    bottom: 20px;
-    width: 200px;
-    height: 25px;
-    background: rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.40);
-    -webkit-box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.40);
-    -o-box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.40);
-    box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.40);
-    -moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-    -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-    -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-    -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-    transform: matrix(-1, -0.1, 0, 1, 0, 0);
 }
