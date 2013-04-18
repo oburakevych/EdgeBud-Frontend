@@ -28,16 +28,10 @@
 <body>
 	<header ng-include src="'/app/views/header.html'"></header>
 	<section class="top_banners" ng-include = "'/app/views/top-banner.html'"></section>
-	<section class="container eb_container">
-    	<div class="row">
-    		<section class="span1">
-    			<!--Left Sidebar content-->
-    		</section>
-    		<section ng-view class="span10">
+	<section class="eb_container">
+    	<div class="row-fluid">
+    		<section ng-view class="span12">
 				<!-- Body content -->
-    		</section>
-    		<section class="span1">
-    			<!--Right Sidebar content-->
     		</section>
     	</div>
     	<div id="eb_must_login_dialog" style="display: none;" ng-include src="'/app/views/login-dialog.html'"></div>

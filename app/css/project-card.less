@@ -10,7 +10,32 @@
 
 }
 
-.first_stripe {
+
+.small_card{
+
+	border-radius: 14px;
+	background-color: @bgColor3;
+	padding: 3px;
+
+	.action_zone {
+		margin:0px;
+		text-align: center;
+	}
+
+	.card_body{
+		background-color: white;
+		border-radius: 14px;
+		padding: 8px;
+	}
+
+	.card_footer{
+		padding: 8px 8px 4px 8px;
+	}
+}
+
+.intro_stripe {
+
+	margin-bottom: 35px;
 
 	.step_number{
 	    font-size:100px;
@@ -33,11 +58,12 @@
 		}
 
 		.form_login{
-			width:266px;
+			width:270px;
 			margin: 10px auto;
-			padding: 16px 10px 10px 10px;
-			border: 3px @borderColor solid;
+			padding: 15px;
+			//border: 3px @borderColor solid;
 			border-radius: 12px;
+			background-color: @bgColor3;
 
 			label {
 				float:left;
@@ -50,7 +76,7 @@
 			.field_input{
 			    display: block;
 			    overflow: hidden;
-			    padding: 0 10px 0 10px
+			    padding: 0 0px 0 15px
 			}
 
 			input {
@@ -84,8 +110,10 @@
 		}
 	}
 
-	.small_card{
-		
-	}
-	
+}
+
+.projects_stripe{
+	background-color: @bgColor3;
+	border-top: 1px solid @borderColor;
+	padding: 35px 0px 35px 0px;
 }
