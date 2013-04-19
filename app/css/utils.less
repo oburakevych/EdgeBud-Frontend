@@ -1,12 +1,14 @@
 @bgColor: white;
-@borderColor: lighten(black, 50%);
+@borderColor: rgb(208, 213, 203);
 @textColor: lighten(black, 20%);
 @darkColor: lighten(black, 30%); //rgba(51,51,51,1)
+@middleDarkColor: rgb(117, 121, 111);
 @lightColor: lighten(black, 70%);
 @veryLightColor: lighten(black, 90%);
 
 @bgColor2: rgba(246,248,242,1); // = #f6f8f2 #eef2ea
 @bgColor3: rgb(238, 242, 234);
+@bgColor4: rgb(248,248,248);
 @darkBgColor2: darken(@bgColor2,60%);
 @contrastColor: yellow;
 @focusColor: rgba(0,179,15,1);//#00B30F
@@ -16,13 +18,20 @@
 @postitColor2 : rgba(255,255,250,1);
 @empty: "";
 
-@standardFont:'Helvetica Neue';
+@standardFont:'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
 @handwrittingFont : "handwritting_2";
 @handwrittingFontBold : "handwritting_2_bold";
 @typewritterFont: "Helvetica Neue";
 
 // accessing JavaScript to get the current height of the body
 @clientHeight: `document.body.clientHeight`;
+
+
+
+.app_column{
+    max-width: 1024px;
+    margin: 0px auto;
+}
 
 .top_banners {
 	position:relative;
