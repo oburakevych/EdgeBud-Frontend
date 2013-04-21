@@ -70,8 +70,10 @@
 
 	.step_1{
 
+		border-right: 1px dashed @middleDarkColor;
+
 		.postit{
-		    width: 290px;
+		    width: 300px;
 		    min-height: 100px;
 		    max-height: 100px;
 		    margin: 0px auto 0px auto;
@@ -83,7 +85,7 @@
 
 		.form_login{
 			width:270px;
-			margin: 10px auto;
+			margin: 10px auto 0px auto;
 			padding: 15px;
 			border: 1px @borderColor solid;
 			border-radius: 12px;
@@ -131,13 +133,36 @@
 
 	.step_2{
 		.postit{
-		    width: 290px;
+		    width: 300px;
 		    min-height: 100px;
 		    max-height: 100px;
 		    margin: 0px auto 0px auto;
 		}
-	}
 
+		.blank_1{
+			height:48px;
+		}
+
+		.blank_2{
+			height:80px;
+		}
+
+		.blank_3{
+			height:40px;
+		}
+
+		.notice_text{
+			font-size: 24px;
+			font-family: @handwrittingFont;
+			vertical-align: middle;
+			text-align: right;
+		}
+
+		.notice_img {
+			width:24%;
+			text-align: right;
+		}
+	}
 }
 
 .projects_stripe{
