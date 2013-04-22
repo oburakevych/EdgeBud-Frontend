@@ -29,7 +29,7 @@
 		background-color: white;
 		border-radius: 14px;
 		padding: 8px;
-		border-bottom: 1px solid @borderColor;
+		border-bottom: 2px solid @borderColor;
 	
 		.card_text{
 			font-size: 13px;
@@ -144,7 +144,7 @@
 		}
 
 		.blank_2{
-			height:80px;
+			height:95px;
 		}
 
 		.blank_3{
@@ -152,10 +152,29 @@
 		}
 
 		.notice_text{
-			font-size: 24px;
 			font-family: @handwrittingFont;
 			vertical-align: middle;
 			text-align: right;
+		}
+
+		.note_1{
+			font-size: 24px;
+		}
+
+		.note_2{
+			font-size: 20px;
+			
+			.notice_img{
+				vertical-align: bottom;
+			}
+		}
+
+		.note_3{
+			font-size: 20px;
+
+			.notice_img{
+				vertical-align: top;
+			}
 		}
 
 		.notice_img {
@@ -169,4 +188,15 @@
 	background-color: @bgColor3;
 	border-top: 1px solid @borderColor;
 	padding: 25px 0px 35px 0px;
+
+	.stripe_title{
+		.title_change {
+			 font-size: 16px;
+			 font-weight: normal;
+			 a{
+			 	color:@lightColor;
+			 	text-decoration: underline;
+			 }
+		}
+	}
 }
