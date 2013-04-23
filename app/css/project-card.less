@@ -28,7 +28,7 @@
 
 		background-color: white;
 		border-radius: 14px;
-		padding: 8px;
+		padding: 9px;
 		border-bottom: 2px solid @borderColor;
 	
 		.card_text{
@@ -202,6 +202,23 @@
 			 }
 		}
 	}
+
+	.meta_right{
+		.next_button{
+			position:relative;
+			top:250px;
+			margin-left:-40px;
+			text-align: center;
+			height: 17px;
+			width: 17px;
+			padding:10px;
+			border-radius: 8px;
+			background-color: @middleLightColor;
+		}
+		.next_button:hover{
+			background-color: @lightColor;
+		}
+	}
 }
 
 .nutshell_stripe{
@@ -209,11 +226,9 @@
 	border-top: 1px solid @borderColor;
 	padding: 25px 0px 35px 0px;
 
+
 	.nutshell_img{
-		img{
-			margin:0px auto 35px auto;
-			min-width:100%;
-		}
+		text-align: center;
 	}
 
 }
