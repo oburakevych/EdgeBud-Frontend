@@ -47,9 +47,9 @@
 		</div>
 	</div>
 	-->
-	<div class="row" ng-repeat="rows in projectRows">
-		<div class="span12" ng-repeat="project in rows | filter: projectQuery">
-			 <eb-project-card eb-object="rows[$index]"/>
+	<div class="row-fluid" ng-repeat="rows in projectRows">
+		<div class="span3" ng-repeat="project in rows">
+			 <eb-project-card eb-object="project"/>
 		</div>
 	</div>
 	<div class="load_more text-center">

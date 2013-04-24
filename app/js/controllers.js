@@ -1,5 +1,13 @@
 'use strict';
 
+function TopBannerController($scope, $rootScope) {
+	$rootScope.showHero = true;
+}
+
+function IntroController($scope, $rootScope, ProjectResource) {
+	$scope.exampleProject = ProjectResource.getExample();
+}
+
 function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, SecurityService, jqueryUI) {
 	$scope.haveAccount = false;
 	$scope.owner = {};
@@ -42,9 +50,7 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, S
 } 
 
 function ProjectsController($scope, $rootScope, ProjectResource) {
-	$rootScope.showHero = true;
 	$scope.projects = ProjectResource.query();
-
 
 	var splitIntoRows = function(array, columns) {
 		if (array.length <= columns) {
@@ -56,7 +62,15 @@ function ProjectsController($scope, $rootScope, ProjectResource) {
 		var rowsArray = new Array(rowsNum);
 
 		for ( var i = 0; i < rowsNum; i++) {
-			var columnsArray = new Array(columns);
+			var columnsArray;
+			if (rowsNum - 1 === i) {
+				// if last row, check if all columns should be used
+				var numOfLastColumns = array.length % columns;
+				console.log("numOfLastColumns = " + numOfLastColumns);
+				columnsArray = new Array(numOfLastColumns);
+			} else {
+				columnsArray = new Array(columns);
+			}
 			for (var j = 0; j < columns; j++) {
 				var index = i * columns + j;
 
@@ -74,8 +88,8 @@ function ProjectsController($scope, $rootScope, ProjectResource) {
 	}
 
 	$scope.$watch('projects', function() {
-		$scope.projectRows = splitIntoRows($scope.projects, 1);
-	});
+		$scope.projectRows = splitIntoRows($scope.projects, 4);
+	}, true);
 }
 
 function ProjectController($scope, $rootScope, UserActionResource, ProjectResource, CopmaniesResource, SecurityService) {

@@ -1,0 +1,54 @@
+{ "company" : {
+      "name" : "",
+      "hide_name": false,
+      "baseline" : "Water doping for cars",
+      "url" : null,
+      "location" : "OpenSource Innovation"
+    },
+    "project_detail" : {
+      "title" : "Data transmission through the sound",
+      "description" : "AirCast.me has created an API which enables anyone to emit meta data in addition to any sound, and to recover these data from any application, such as a mobile phone. Common application are retail stores, shopping or even transportation...",
+      "key_metrics" :[
+        {
+          "label":"2012 REVENUES",
+          "data":"3 M$"
+        },
+        {
+          "label":"KEY ASSET",
+          "data":"Multi-Use Device"
+        },
+        {
+          "label":"TOP CLIENT",
+          "data":"America's CUP"
+        }
+      ]
+    },
+    "challenge" : {
+      "title":"Use my technology to create branches!",
+      "mentor_img":"larry.jpg",
+      "tasks": [
+        {
+          "icon":"",
+          "text":"STEP1 : Suggest a new market",
+          "reward":"+10 influence",
+          "reward_intro":"Earn",
+          "reward_type":"money_reward",
+          "detail_icon":"",
+          "text_detail":"eg. : Apply techno in Rio to motorbikes",
+          "reward_detail":""
+        },
+        {
+          "icon":"icon-plus-sign",
+          "text":"Then add supporting data",
+          "reward":"+3 influence",
+          "reward_intro":"Earn",
+          "reward_type":"fork_reward"
+        }
+      ]
+    },
+    "meta":{
+      "contributors":26,
+      "remaining_time":23,
+      "step_reward":"$ 2600"
+    }
+}

@@ -52,5 +52,167 @@
       "remaining_time":23,
       "step_reward":"$ 2600"
     }
-  }
+  },
+    { "company" : {
+        "name" : "",
+        "hide_name": false,
+        "baseline" : "Water doping for cars",
+        "url" : null,
+        "location" : "OpenSource Innovation"
+    },
+        "project_detail" : {
+            "title" : "Help an America’s Cup Supplier of Connected Objects to Reach More Profitable Industrial Markets",
+            "description" : "The technology of water doping applies to any engine, and is largely unknown. The engine exhaust heat is used in a chamber to get a hot / cold self generating plasma",
+            "key_metrics" :[
+                {
+                    "label":"2012 REVENUES",
+                    "data":"3 M$"
+                },
+                {
+                    "label":"KEY ASSET",
+                    "data":"Multi-Use Device"
+                },
+                {
+                    "label":"TOP CLIENT",
+                    "data":"America's CUP"
+                }
+            ]
+        },
+        "challenge" : {
+            "title":"Use my technology to create branches!",
+            "mentor_img":"larry.jpg",
+            "tasks": [
+                {
+                    "icon":"",
+                    "text":"STEP1 : Suggest a new market",
+                    "reward":"+10 influence",
+                    "reward_intro":"Earn",
+                    "reward_type":"money_reward",
+                    "detail_icon":"",
+                    "text_detail":"eg. : Apply techno in Rio to motorbikes",
+                    "reward_detail":""
+                },
+                {
+                    "icon":"icon-plus-sign",
+                    "text":"Then add supporting data",
+                    "reward":"+3 influence",
+                    "reward_intro":"Earn",
+                    "reward_type":"fork_reward"
+                }
+            ]
+        },
+        "meta":{
+            "contributors":26,
+            "remaining_time":23,
+            "step_reward":"$ 2600"
+        }
+    },
+	{ "company" : {
+		"name" : "",
+		"hide_name": false,
+		"baseline" : "Water doping for cars",
+		"url" : null,
+		"location" : "OpenSource Innovation"
+	},
+		"project_detail" : {
+			"title" : "Help an America’s Cup Supplier of Connected Objects to Reach More Profitable Industrial Markets",
+			"description" : "The technology of water doping applies to any engine, and is largely unknown. The engine exhaust heat is used in a chamber to get a hot / cold self generating plasma",
+			"key_metrics" :[
+				{
+					"label":"2012 REVENUES",
+					"data":"3 M$"
+				},
+				{
+					"label":"KEY ASSET",
+					"data":"Multi-Use Device"
+				},
+				{
+					"label":"TOP CLIENT",
+					"data":"America's CUP"
+				}
+			]
+		},
+		"challenge" : {
+			"title":"Use my technology to create branches!",
+			"mentor_img":"larry.jpg",
+			"tasks": [
+				{
+					"icon":"",
+					"text":"STEP1 : Suggest a new market",
+					"reward":"+10 influence",
+					"reward_intro":"Earn",
+					"reward_type":"money_reward",
+					"detail_icon":"",
+					"text_detail":"eg. : Apply techno in Rio to motorbikes",
+					"reward_detail":""
+				},
+				{
+					"icon":"icon-plus-sign",
+					"text":"Then add supporting data",
+					"reward":"+3 influence",
+					"reward_intro":"Earn",
+					"reward_type":"fork_reward"
+				}
+			]
+		},
+		"meta":{
+			"contributors":26,
+			"remaining_time":23,
+			"step_reward":"$ 2600"
+		}
+	},
+	{ "company" : {
+		"name" : "",
+		"hide_name": false,
+		"baseline" : "Water doping for cars",
+		"url" : null,
+		"location" : "OpenSource Innovation"
+	},
+		"project_detail" : {
+			"title" : "Help an America’s Cup Supplier of Connected Objects to Reach More Profitable Industrial Markets",
+			"description" : "The technology of water doping applies to any engine, and is largely unknown. The engine exhaust heat is used in a chamber to get a hot / cold self generating plasma",
+			"key_metrics" :[
+				{
+					"label":"2012 REVENUES",
+					"data":"3 M$"
+				},
+				{
+					"label":"KEY ASSET",
+					"data":"Multi-Use Device"
+				},
+				{
+					"label":"TOP CLIENT",
+					"data":"America's CUP"
+				}
+			]
+		},
+		"challenge" : {
+			"title":"Use my technology to create branches!",
+			"mentor_img":"larry.jpg",
+			"tasks": [
+				{
+					"icon":"",
+					"text":"STEP1 : Suggest a new market",
+					"reward":"+10 influence",
+					"reward_intro":"Earn",
+					"reward_type":"money_reward",
+					"detail_icon":"",
+					"text_detail":"eg. : Apply techno in Rio to motorbikes",
+					"reward_detail":""
+				},
+				{
+					"icon":"icon-plus-sign",
+					"text":"Then add supporting data",
+					"reward":"+3 influence",
+					"reward_intro":"Earn",
+					"reward_type":"fork_reward"
+				}
+			]
+		},
+		"meta":{
+			"contributors":26,
+			"remaining_time":23,
+			"step_reward":"$ 2600"
+		}
+	}
 ]

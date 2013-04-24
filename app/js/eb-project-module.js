@@ -16,7 +16,8 @@ projectModule.directive('ebProjectCard', function() {
 projectModule.factory('ProjectResource', function($resource) {
 	return $resource(edgeBudModule.BASE_URL + '/projects/:projectId.json', {},
 		{
-			query: {method:'GET', params:{projectId: 'projects'}, isArray: true}
+			query: {method:'GET', params:{projectId: 'projects'}, isArray: true},
+			getExample: {method: 'GET', params: {projectId: 'example'}, isArray: false}
 		}
 	);
 });
