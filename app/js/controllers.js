@@ -8,6 +8,14 @@ function IntroController($scope, $rootScope, ProjectResource) {
 	$scope.exampleProject = ProjectResource.getExample();
 }
 
+function SignupController($scope, $rootScope, $timeout, SecurityService) {
+	$scope.owner = {};
+	$scope.signup = function(successFn, errorFn) {
+		console.log("Signup " + angular.toJson($scope.owner));
+		SecurityService.signup($scope.owner, $scope, successFn, errorFn);
+	}
+}
+
 function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, SecurityService, jqueryUI) {
 	$scope.haveAccount = false;
 	$scope.owner = {};
@@ -26,12 +34,14 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, S
 		SecurityService.login($scope.owner, $scope, successFn, errorFn);
 	}
 
-	if (!$rootScope.authorisedOwner) {
-		var userCookie = $cookieStore.get("EB_LOGGED_USER");
-		if (userCookie) {
-			SecurityService.login(userCookie);
-		} else {
-			$timeout($scope.showLoginSignupDialog, 200, true);
+	$scope.autoLogin = function() {
+		if (!$rootScope.authorisedOwner) {
+			var userCookie = $cookieStore.get("EB_LOGGED_USER");
+			if (userCookie) {
+				SecurityService.login(userCookie);
+			} else {
+				$timeout($scope.showLoginSignupDialog, 200, true);
+			}
 		}
 	}
 
@@ -47,6 +57,8 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, S
 	$scope.$on('event:show-login-signup-dialog', function() {
 		$scope.showLoginSignupDialog();		
 	});
+
+	$timeout($scope.autoLogin, 100, true);
 } 
 
 function ProjectsController($scope, $rootScope, ProjectResource) {

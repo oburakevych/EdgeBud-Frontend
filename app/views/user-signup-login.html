@@ -1,55 +1,18 @@
 <section ng-controller="UserSignupLoginController" class="login-form header_form">
-    <div ng-switch on="formType">
-        <!-- Top horisontal login and signup form -->
-        <div ng-switch-when="TOP_HORISONTAL">
-            <div class="form-inline controls login_btn" ng-hide="authorisedOwner">
-                <input type="email" placeholder="E-mail" class="input-small" ng-model="owner.username"/>
-                <input type="password" placeholder="Password" class="input-small" ng-model="owner.password"/>
-                <button class="btn btn-link" ng-click="login()">Login</button>
-                <button class="btn btn-link" ng-click="signup()">Signup</button>
-            </div>
-            <span ng-hide="!authorisationFailed" class="text-error">{{authorisationFailed}}</span>
-            <div class="btn-group form-inline controls login_btn" ng-show="authorisedOwner">
-                <button class="btn dropdown-toggle" data-toggle="dropdown">
-                    {{authorisedOwner.username}}
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a ng-click="logout()">Logout</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Inline signup form with some additional details info in the intro stripe of the frontend page -->
-        <div ng-switch-when="INTRO_INLINE_1">
-            <div class="form_login">
-                <p><label>My Name is </label><span class="field_input"><input class="xxx"></span></p>
-                <p><label>I live in </label><span class="field_input"><input class="xxx"></span></p>
-                <p><label>and my specialities are </label></p>
-                <p><span class="field_input"><input></span></p>
-                <p>&nbsp;</p>
-                <p><label>+ my email </label><span class="field_input"><input type="email" placeholder="E-mail" ng-model="owner.username"/></span></p>
-                <p><label>+ my password </label><span class="field_input"><input type="password" placeholder="Password" class="input-small" ng-model="owner.password"/></span></p>
-                <button class="btn btn-success" ng-click="signup()">Now help me to fork a successful business</button>
-            </div>
-        </div>
-        <div ng-switch-default>
-            <div class="form-inline controls login_btn" ng-hide="authorisedOwner">
-                <input type="email" placeholder="E-mail" class="input-small" ng-model="owner.username"/>
-                <input type="password" placeholder="Password" class="input-small" ng-model="owner.password"/>
-                <button class="btn btn-link" ng-click="login()">Login</button>
-                <button class="btn btn-link" ng-click="signup()">Signup</button>
-            </div>
-            <span ng-hide="!authorisationFailed" class="text-error">{{authorisationFailed}}</span>
-            <div class="btn-group form-inline controls login_btn" ng-show="authorisedOwner">
-                <button class="btn dropdown-toggle" data-toggle="dropdown">
-                    {{authorisedOwner.username}}
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a ng-click="logout()">Logout</a></li>
-                </ul>
-            </div>
-        </div>
+    <div class="form-inline controls login_btn" ng-hide="authorisedOwner">
+        <input type="email" placeholder="E-mail" class="input-small" ng-model="owner.username"/>
+        <input type="password" placeholder="Password" class="input-small" ng-model="owner.password"/>
+        <button class="btn btn-link" ng-click="login()">Login</button>
+        <button class="btn btn-link" ng-click="signup()">Signup</button>
+    </div>
+    <span ng-hide="!authorisationFailed" class="text-error">{{authorisationFailed}}</span>
+    <div class="btn-group form-inline controls login_btn" ng-show="authorisedOwner">
+        <button class="btn dropdown-toggle" data-toggle="dropdown">
+            {{authorisedOwner.username}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a ng-click="logout()">Logout</a></li>
+        </ul>
     </div>
 </section>

@@ -1,0 +1,15 @@
+<section class="login-form header_form">
+    <div ng-switch on="formType" ng-controller="SignupController">
+        <!-- Top horisontal login and signup form -->
+        <div ng-switch-when="TOP_HORISONTAL">
+            <div ng-include src="'/app/views/signup/signup-simple-top-horisontal.html'"></div>
+        </div>
+        <!-- Inline signup form with some additional details info in the intro stripe of the frontend page -->
+        <div ng-switch-when="INTRO_INLINE_1">
+            <div ng-include src="'/app/views/signup/signup-intro-inline-1.html'"></div>
+        </div>
+        <div ng-switch-default>
+            <div ng-include src="'/app/views/signup/signup-simple-top-horisontal.html'"></div>
+        </div>
+    </div>
+</section>

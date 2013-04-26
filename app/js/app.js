@@ -6,7 +6,8 @@ var edgeBudModule = angular.module('edgeBudApp',
 		['ebProjectModule', 
 		 'ebCompaniesModule', 
 		 'filterModule', 
-		 'ebUserModule', 
+		 'ebUserModule',
+		 'ebSignupModule',
 		 'ebActionInterceptorModule',
 		 'ebDialogModule']
 );

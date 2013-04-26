@@ -4,7 +4,6 @@ ebUserModule.directive('ebLoginForm', function() {
 	return {
 		restrict: 'A, E',
 		link: function(scope, elm, attrs) {
-			var ii = scope;
 		},
 		templateUrl: 'views/user-signup-login.html'
 	};
@@ -22,7 +21,7 @@ ebUserModule.factory('SecurityService', function($http, $rootScope, $cookieStore
 						console.log("authenticated successfully");
 						$rootScope.authorisedOwner = data;
 						$cookieStore.put("EB_LOGGED_USER", $rootScope.authorisedOwner);
-
+						//$rootScope.$apply();
 						if (successFn) {
 							successFn();
 						}
@@ -49,7 +48,7 @@ ebUserModule.factory('SecurityService', function($http, $rootScope, $cookieStore
 						console.log("authenticated successfully");
 						$rootScope.authorisedOwner = data;
 						$cookieStore.put("EB_LOGGED_USER", $rootScope.authorisedOwner);
-
+						//$rootScope.$apply();
 						if (successFn) {
 							successFn();
 						}
