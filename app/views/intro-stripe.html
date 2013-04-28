@@ -2,9 +2,9 @@
     <div class="span1"></div>
 
     <div class="span10">
-        <div class="row-fluid app_column">
-            <div class="span4 step_1">
-                <div class="width90percent">
+        <div class="row-fluid app_column" ng-show="autologinAttempted">
+            <div class="span4 step_1" ng-switch on="!authorisedAccount">
+                <div class="width90percent" ng-switch-when="true">
                     <div class="rotate0 rotated_container">
                         <div class="postit">
                             <table style="margin-left:25px;">
@@ -23,6 +23,12 @@
 
                     <div eb-signup-form eb-form-type="INTRO_INLINE_1"/>
                 </div>
+                <div ng-switch-when="false">
+                    <div eb-account-completeness/>
+                </div>
+                <div ng-switch-default>
+                    <!-- Nothing shown by default to prevent blinking when ng-switching the views -->
+                </div>
             </div>
 
             <div class="span4 step_2">
@@ -31,7 +37,7 @@
                         <table style="margin-left:15px;">
                             <tbody>
                             <tr>
-                                <td rowspan="3" class="step_number">2.</td>
+                                <td rowspan="3" class="step_number"><span ng-hide="authorisedAccount">2.</span></td>
                                 <td>Start interacting</td>
                             </tr>
                             <tr>
@@ -51,7 +57,7 @@
                     <table class="note_1">
                         <tbody>
                         <tr style="width:100%">
-                            <td class="notice_text">
+                            <td class="notice_text text-right">
                                 Discover a breakthrough innovation here
                             </td>
                             <td width="5%"></td>
@@ -69,7 +75,7 @@
                     <table class="note_2">
                         <tbody>
                         <tr style="width:100%">
-                            <td class="notice_text">
+                            <td class="notice_text text-right">
                                 Submit your application to develop this innovation in a new market of your speciality
                             </td>
                             <td width="5%"></td>
@@ -87,7 +93,7 @@
                     <table class="note_3">
                         <tbody>
                         <tr style="width:100%">
-                            <td class="notice_text">
+                            <td class="notice_text text-right">
                                 By bookmarking this opportunity, you will get notified of similar projects in the future
                             </td>
                             <td width="5%"></td>

@@ -9,44 +9,53 @@ function IntroController($scope, $rootScope, ProjectResource) {
 }
 
 function SignupController($scope, $rootScope, $timeout, SecurityService) {
-	$scope.owner = {};
+	$scope.account = {
+		type: 'STANDARD',
+		owner: {}
+	}
 	$scope.signup = function(successFn, errorFn) {
-		console.log("Signup " + angular.toJson($scope.owner));
-		SecurityService.signup($scope.owner, $scope, successFn, errorFn);
+		console.log("Signup " + angular.toJson($scope.account));
+		SecurityService.signup($scope.account, $scope, successFn, errorFn);
 	}
 }
 
 function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, SecurityService, jqueryUI) {
 	$scope.haveAccount = false;
-	$scope.owner = {};
+	$scope.account = {
+		type: 'STANDARD',
+		owner: {}
+	}
 
 	$scope.showLoginSignupDialog = function() {
 		jqueryUI.activateDialog($rootScope.dialogs['LoginSignup'], 'Welcome to LiveStormer Beta');
 	}
 	
 	$scope.signup = function(successFn, errorFn) {
-		console.log("Signup " + angular.toJson($scope.owner));
-		SecurityService.signup($scope.owner, $scope, successFn, errorFn);
+		console.log("Signup " + angular.toJson($scope.account));
+		SecurityService.signup($scope.account, $scope, successFn, errorFn);
 	}
 
 	$scope.login = function(successFn, errorFn) {
-		console.log("Login " + angular.toJson($scope.owner));
-		SecurityService.login($scope.owner, $scope, successFn, errorFn);
+		console.log("Login " + angular.toJson($scope.account.owner));
+		SecurityService.login($scope.account.owner, $scope, successFn, errorFn);
 	}
 
 	$scope.autoLogin = function() {
-		if (!$rootScope.authorisedOwner) {
+		if (!$rootScope.authorisedAccount) {
 			var userCookie = $cookieStore.get("EB_LOGGED_USER");
 			if (userCookie) {
 				SecurityService.login(userCookie);
 			} else {
-				$timeout($scope.showLoginSignupDialog, 200, true);
+				// Signup is on the intro-stripe
+				//$timeout($scope.showLoginSignupDialog, 200, true);
 			}
+
+			$timeout(function() {$rootScope.autologinAttempted = true;}, 1400, true);
 		}
 	}
 
 	$scope.logout = function() {
-		console.log("Logging out " + angular.toJson($rootScope.authorisedOwner));
+		console.log("Logging out " + angular.toJson($rootScope.authorisedAccount));
 		SecurityService.logout();
 	}
 
@@ -58,7 +67,7 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, S
 		$scope.showLoginSignupDialog();		
 	});
 
-	$timeout($scope.autoLogin, 100, true);
+	$timeout($scope.autoLogin, 0, true);
 } 
 
 function ProjectsController($scope, $rootScope, ProjectResource) {
@@ -220,7 +229,7 @@ function TakeActionController($scope, $rootScope, UserActionResource, jqueryUI) 
 
 	$scope.initAction = function(details) {
 		$scope.userAction = {
-			owner: $rootScope.authorisedOwner, 
+			owner: $rootScope.authorisedAccount.owner,
 			type: 'ManualAction',
 			message: ''
 		};
@@ -229,6 +238,23 @@ function TakeActionController($scope, $rootScope, UserActionResource, jqueryUI) 
 			if (details.elementName) {
 				$scope.userAction.elementName = details.elementName;
 			}
+		}
+	}
+}
+
+function AccountCompletenessController($scope, $rootScope, AccountCompletenessTaskResource) {
+	if ($rootScope.authorisedAccount || $rootScope.authorisedAccount.id) {
+		console.log("Get completeness");
+		$scope.accountCompleteness = AccountCompletenessTaskResource.get({accountId: $rootScope.authorisedAccount.id});
+	} else {
+		console.warn('User is not authorised properly');
+	}
+
+	$scope.getCompletenessClass = function(task) {
+		if (task.isCompleted) {
+			return 'task-completed';
+		} else{
+			return 'task-uncompleted';
 		}
 	}
 }

@@ -9,19 +9,20 @@ ebUserModule.directive('ebLoginForm', function() {
 	};
 });
 
-ebUserModule.factory('SecurityService', function($http, $rootScope, $cookieStore) {
+ebUserModule.factory('SecurityService', function($http, $rootScope, $cookieStore, BASE_URL_BACKEND) {
 	return {
-		signup: function(owner, $scope, successFn, errorFn) {
-			if (owner && owner.username && owner.password) {
+		signup: function(account, $scope, successFn, errorFn) {
+			if (account && account.owner && account.owner.username && account.owner.password) {
 				if ($scope) {
 					$scope.authorisationFailed = null;
 				}
-				$http.post(edgeBudModule.BASE_URL_BACKEND + '/owners/signup', owner)
+				$http.post(edgeBudModule.BASE_URL_BACKEND + '/account/signup', account)
 					.success(function(data) {
 						console.log("authenticated successfully");
-						$rootScope.authorisedOwner = data;
-						$cookieStore.put("EB_LOGGED_USER", $rootScope.authorisedOwner);
-						//$rootScope.$apply();
+						$rootScope.authorisedAccount = data;
+						if ($rootScope.authorisedAccount && $rootScope.authorisedAccount.owner) {
+							$cookieStore.put("EB_LOGGED_USER", $rootScope.authorisedAccount.owner);
+						}
 						if (successFn) {
 							successFn();
 						}
@@ -43,12 +44,14 @@ ebUserModule.factory('SecurityService', function($http, $rootScope, $cookieStore
 				if ($scope) {
 					$scope.authorisationFailed = null;
 				}
-				$http.post(edgeBudModule.BASE_URL_BACKEND + '/owners/authenticate', owner)
+				$http.post(edgeBudModule.BASE_URL_BACKEND + '/owner/authenticate', owner)
 					.success(function(data) {
 						console.log("authenticated successfully");
-						$rootScope.authorisedOwner = data;
-						$cookieStore.put("EB_LOGGED_USER", $rootScope.authorisedOwner);
-						//$rootScope.$apply();
+						$rootScope.authorisedAccount = data;
+						if ($rootScope.authorisedAccount && $rootScope.authorisedAccount.owner) {
+							$cookieStore.put("EB_LOGGED_USER", $rootScope.authorisedAccount.owner);
+						}
+
 						if (successFn) {
 							successFn();
 						}
@@ -66,8 +69,8 @@ ebUserModule.factory('SecurityService', function($http, $rootScope, $cookieStore
 		},
 
 		logout: function() {
-			if ($rootScope.authorisedOwner) {
-				$rootScope.authorisedOwner = undefined;
+			if ($rootScope.authorisedAccount) {
+				$rootScope.authorisedAccount = undefined;
 			}
 
 			if ($cookieStore.get("EB_LOGGED_USER")) {

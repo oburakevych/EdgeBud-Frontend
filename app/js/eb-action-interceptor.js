@@ -48,12 +48,16 @@ actionInterceptorModule.directive('ebLogUserAction', function($rootScope, UserAc
 				}
 				
 				try {
-					UserActionResource.log({owner: $rootScope.authorisedOwner, type: 'MouseDown', elementName: name, htlm: elm.innerHTML});
+					var owner = null;
+					if ($rootScope.authorisedAccount && $rootScope.authorisedAccount.owner) {
+						owner = $rootScope.authorisedAccount.owner;
+					}
+					UserActionResource.log({owner: owner, type: 'MouseDown', elementName: name, htlm: elm.innerHTML});
 				} catch(error) {
 					console.warn("Error loggin user actions: " + error);
 				}
 
-				if (!$rootScope.authorisedOwner) {
+				if (!$rootScope.authorisedAccount) {
 					//Create a dialog asking to register
 					$rootScope.$broadcast('event:show-login-signup-dialog');
 				} else if (showActionDialog) {

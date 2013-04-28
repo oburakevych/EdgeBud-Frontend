@@ -1,13 +1,13 @@
-<div class="form-inline controls login_btn" ng-hide="authorisedOwner">
+<div class="form-inline controls login_btn" ng-hide="authorisedAccount">
     <input type="email" placeholder="E-mail" class="input-small" ng-model="owner.username"/>
     <input type="password" placeholder="Password" class="input-small" ng-model="owner.password"/>
     <button class="btn btn-link" ng-click="login()">Login</button>
     <button class="btn btn-link" ng-click="signup()">Signup</button>
 </div>
 <span ng-hide="!authorisationFailed" class="text-error">{{authorisationFailed}}</span>
-<div class="btn-group form-inline controls login_btn" ng-show="authorisedOwner">
+<div class="btn-group form-inline controls login_btn" ng-show="authorisedAccount">
     <button class="btn dropdown-toggle" data-toggle="dropdown">
-        {{authorisedOwner.username}}
+        {{authorisedAccount.owner.username}}
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">

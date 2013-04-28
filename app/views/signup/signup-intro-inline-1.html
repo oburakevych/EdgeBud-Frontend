@@ -1,10 +1,10 @@
 <div class="form_login">
-    <p><label>My Name is </label><span class="field_input"><input class="xxx"></span></p>
-    <p><label>I live in </label><span class="field_input"><input class="xxx"></span></p>
+    <p><label>My Name is </label><span class="field_input"><input type="text" ng-model="account.owner.name" class="xxx"></span></p>
+    <p><label>I live in </label><span class="field_input"><input type="text" ng-model="account.owner.city" class="xxx"></span></p>
     <p><label>and my specialities are </label></p>
-    <p><span class="field_input"><input></span></p>
+    <p><span class="field_input"><input type="text"></span></p>
     <p>&nbsp;</p>
-    <p><label>+ my email </label><span class="field_input"><input type="email" placeholder="E-mail" ng-model="owner.username"/></span></p>
-    <p><label>+ my password </label><span class="field_input"><input type="password" placeholder="Password" class="input-small" ng-model="owner.password"/></span></p>
+    <p><label>+ my email </label><span class="field_input"><input type="email" placeholder="E-mail" ng-model="account.owner.username"/></span></p>
+    <p><label>+ my password </label><span class="field_input"><input type="password" placeholder="Password" class="input-small" ng-model="account.owner.password"/></span></p>
     <button class="btn btn-success" ng-click="signup()">Now help me to fork a successful business</button>
 </div>

@@ -4,7 +4,7 @@
         <p>Welcome to LiveStormer Beta. We feature very innovative projects. This beta is built to let us know how you interact with the content.</p>
     </section>
     <section ng-controller="UserSignupLoginController" class="login-form login_dialog row-fluid">
-        <div class="form-inline controls span9" ng-hide="authorisedOwner">
+        <div class="form-inline controls span9" ng-hide="authorisedAccount">
             <input type="email" placeholder="E-mail" class="input-small" ng-model="owner.username"/>
             <input type="password" placeholder="Password" class="input-small" ng-model="owner.password"/>
             <button class="btn btn-primary" ng-click="login(closeLoginSignupDialog)">Login</button>
