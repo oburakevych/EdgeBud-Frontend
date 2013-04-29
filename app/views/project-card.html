@@ -1,7 +1,7 @@
 <div ng-controller="ProjectController" class="eb_project small_card">
     <div class="card_body">
         <img src="img/photo-main-default.jpg">
-        <h4>{{project.project_detail.title}}</h4>
+        <h4><a href="#/projects/{{project.id}}"> {{project.project_detail.title}}</a></h4>
         <p class="card_text">
             {{project.project_detail.description}}
         </p>
