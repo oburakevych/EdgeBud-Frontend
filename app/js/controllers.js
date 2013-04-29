@@ -65,6 +65,7 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, S
 
 	$scope.afterUserLoggedIn = function() {
 		console.log("LoginSignupUserController: After user logged In");
+		$rootScope.showHero = false;
 	}
 	
 	$scope.$on('event:show-login-signup-dialog', function() {
