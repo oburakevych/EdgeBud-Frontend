@@ -26,6 +26,8 @@ ebUserModule.factory('SecurityService', function($http, $rootScope, $cookieStore
 						if (successFn) {
 							successFn();
 						}
+
+						$rootScope.$broadcast('event:after-user-logged-in');
 					}).error(function(data) {
 						console.warn('Signup failed: ' + data);
 						if ($scope) {
@@ -55,6 +57,8 @@ ebUserModule.factory('SecurityService', function($http, $rootScope, $cookieStore
 						if (successFn) {
 							successFn();
 						}
+
+						$rootScope.$broadcast('event:after-user-logged-in');
 					}).error(function(data) {
 						console.warn('Authorisation failed: ' + data);
 						if ($scope) {

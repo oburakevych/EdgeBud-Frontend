@@ -1,5 +1,7 @@
 [
-  { "company" : {
+  {
+	  "id": 1,
+	  "company" : {
       "name" : "",
       "hide_name": false,
       "baseline" : "Water doping for cars",
@@ -53,7 +55,8 @@
       "step_reward":"$ 2600"
     }
   },
-    { "company" : {
+	{   "id": 2,
+		"company" : {
         "name" : "",
         "hide_name": false,
         "baseline" : "Water doping for cars",
@@ -107,7 +110,8 @@
             "step_reward":"$ 2600"
         }
     },
-	{ "company" : {
+	{   "id": 3,
+		"company" : {
 		"name" : "",
 		"hide_name": false,
 		"baseline" : "Water doping for cars",
@@ -161,7 +165,8 @@
 			"step_reward":"$ 2600"
 		}
 	},
-	{ "company" : {
+	{   "id": 4,
+		"company" : {
 		"name" : "",
 		"hide_name": false,
 		"baseline" : "Water doping for cars",

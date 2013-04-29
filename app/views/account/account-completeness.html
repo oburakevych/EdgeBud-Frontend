@@ -1,0 +1,11 @@
+<div ng-controller="AccountCompletenessController" class="eb_account_completeness intro_stripe">
+    <div class="">
+        <h4>Account completeness {{accountCompleteness.rate + 44}}%</h4>
+        <div class="progress progress-info">
+            <div class="bar" ng-style="{width: '44%'}"></div>
+        </div>
+        <p ng-repeat="taskCompleteness in accountCompleteness.taskCompletenesses" class="text-left" ng-class="getCompletenessClass(taskCompleteness)">
+            {{taskCompleteness.task.name}}
+        </p>
+    </div>
+</div>

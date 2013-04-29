@@ -14,7 +14,7 @@ projectModule.directive('ebProjectCard', function() {
 });
 
 projectModule.factory('ProjectResource', function($resource) {
-	return $resource(edgeBudModule.BASE_URL + '/projects/:projectId.json', {},
+	return $resource(edgeBudModule.BASE_URL_DATA + '/projects/:projectId.json', {},
 		{
 			query: {method:'GET', params:{projectId: 'projects'}, isArray: true},
 			getExample: {method: 'GET', params: {projectId: 'example'}, isArray: false}
@@ -23,5 +23,5 @@ projectModule.factory('ProjectResource', function($resource) {
 });
 
 projectModule.factory('ProjectDetailsResource', function($resource) {
-	return $resource(edgeBudModule.BASE_URL + '/projects/:projectId/details.json');
+	return $resource(edgeBudModule.BASE_URL_DATA + '/projects/:projectId/details.json');
 });

@@ -24,7 +24,7 @@
 	<link rel="stylesheet/less" type="text/css" href="css/project-details.less">
 	<link rel="stylesheet/less" type="text/css" href="css/login.less">
 	<link rel="stylesheet/less" type="text/css" href="css/project-live.less">
-    <link rel="stylesheet/less" type="text/css" href="css/account-completeness.less">
+    <link rel="stylesheet/less" type="text/css" href="css/account.less">
 </head>
 <body>
 	<header ng-include src="'/app/views/header.html'"></header>
@@ -39,6 +39,24 @@
     	<div id="eb_take_action_dialog" style="display: none;" ng-include src="'/app/views/take-action-dialog.html'"></div>
     </section>
 </body>
+    <script type="text/javascript">
+        // Configuration for the development environment
+
+        // Configure LESS (resources/js/less/less.min.js) settings when under a !#watch regenerating and polling CSS constantly
+        less = {
+            env: "development", // or "production"
+            async: false,       // load imports async
+            fileAsync: false,   // load imports async when in a page under
+            // a file protocol
+            poll: 4000,         // when in watch mode, time in ms between polls
+            functions: {},      // user functions, keyed by name
+            dumpLineNumbers: "comments", // or "mediaQuery" or "all"
+            relativeUrls: false,// whether to adjust url's to be relative
+            // if false, url's are already relative to the
+            // entry less file
+        };
+    </script>
+
 	<!-- Use new version 1.1.1 from CDN when released-->
     <script type="text/javascript" src="lib/jquery.min.js"></script>
 	<script type="text/javascript" src="lib/jquery-ui-1.10.2.custom.min.js"></script>
@@ -57,7 +75,7 @@
     <script type="text/javascript" src="js/eb-signup-module.js"></script>
 	<script type="text/javascript" src="js/eb-action-interceptor.js"></script>
 	<script type="text/javascript" src="js/eb-dialog-module.js"></script>
-    <script type="text/javascript" src="js/eb-account-completeness-module.js"></script>
+    <script type="text/javascript" src="js/eb-account-module.js"></script>
 	<script type="text/javascript" src="js/controllers.js"></script>
 	<script type="text/javascript" src="js/filters.js"></script>
 </html>

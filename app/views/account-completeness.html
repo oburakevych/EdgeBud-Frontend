@@ -1,8 +1,0 @@
-<div ng-controller="AccountCompletenessController" class="eb_account_completeness intro_stripe width90percent">
-    <div class="card_body step_2">
-        <h4 notice_text>Account completeness {{accountCompleteness.rate}}</h4>
-        <p ng-repeat="taskCompleteness in accountCompleteness.taskCompletenesses" class="text-left" ng-class="getCompletenessClass(taskCompleteness.task)">
-            {{taskCompleteness.task.name}}
-        </p>
-    </div>
-</div>

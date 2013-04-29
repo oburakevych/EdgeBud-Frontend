@@ -62,15 +62,21 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, S
 	$rootScope.logMyAction = function(actionType, element) {
 		log.console("Logging user action: ");
 	}
+
+	$scope.afterUserLoggedIn = function() {
+		console.log("LoginSignupUserController: After user logged In");
+	}
 	
 	$scope.$on('event:show-login-signup-dialog', function() {
 		$scope.showLoginSignupDialog();		
 	});
 
+	$scope.$on('event:after-user-logged-in', $scope.afterUserLoggedIn);
+
 	$timeout($scope.autoLogin, 0, true);
 } 
 
-function ProjectsController($scope, $rootScope, ProjectResource) {
+function ProjectsController($scope, $rootScope, ProjectResource, AccountResource) {
 	$scope.projects = ProjectResource.query();
 
 	var splitIntoRows = function(array, columns) {
@@ -111,9 +117,14 @@ function ProjectsController($scope, $rootScope, ProjectResource) {
 	$scope.$watch('projects', function() {
 		$scope.projectRows = splitIntoRows($scope.projects, 4);
 	}, true);
+
+	$scope.$on('event:after-user-logged-in', function() {
+		console.log("ProjectsController: After user logged In");
+		$rootScope.projectBookmarks = AccountResource.getBookmarks({accountId: $rootScope.authorisedAccount.id});
+	});
 }
 
-function ProjectController($scope, $rootScope, UserActionResource, ProjectResource, CopmaniesResource, SecurityService) {
+function ProjectController($scope, $rootScope, UserActionResource, ProjectResource, CopmaniesResource, SecurityService, AccountResource) {
 	$scope.newProject = {
 			company: {
 				figures: []
@@ -179,7 +190,50 @@ function ProjectController($scope, $rootScope, UserActionResource, ProjectResour
 			return "/app/img/" + $scope.project.id + "/photo-main.jpg";
 		}
 	}
-	
+
+	$scope.bookmark = function() {
+		var bookmark = {
+			accountId: $rootScope.authorisedAccount.id,
+			objectType: 'OPPORTUNITY',
+			objectId: $scope.project.id
+		}
+
+		if ($scope.project.isBookmarked) {
+			$scope.project.isBookmarked = false;
+			AccountResource.removeBookmark(bookmark, function() {}, function() {
+				//ERROR
+				$scope.project.isBookmarked = true;
+			});
+		} else {
+			$scope.project.isBookmarked = true;
+			AccountResource.addBookmark(bookmark, function() {}, function() {
+				$scope.project.isBookmarked = false;
+			});
+		}
+	}
+
+	$scope.getBookmarkClass = function() {
+		if ($scope.project.isBookmarked) {
+			return 'bookmarked';
+		} else {
+			return 'unbookmarked';
+		}
+	}
+
+	$rootScope.$watch('projectBookmarks', function() {
+		var isBookmarked = false;
+		if ($rootScope.projectBookmarks && $rootScope.projectBookmarks.length > 0) {
+			for(var i = 0; i < $rootScope.projectBookmarks.length; i++) {
+				if ($rootScope.projectBookmarks[i].objectId === $scope.project.id) {
+					isBookmarked = true;
+					break;
+				}
+			};
+		}
+
+		$scope.project.isBookmarked = isBookmarked;
+	}, true);
+
 	$scope.getCompanies();
 }
 	
@@ -250,8 +304,8 @@ function AccountCompletenessController($scope, $rootScope, AccountCompletenessTa
 		console.warn('User is not authorised properly');
 	}
 
-	$scope.getCompletenessClass = function(task) {
-		if (task.isCompleted) {
+	$scope.getCompletenessClass = function(taskCompleteness) {
+		if (taskCompleteness.isCompleted) {
 			return 'task-completed';
 		} else{
 			return 'task-uncompleted';

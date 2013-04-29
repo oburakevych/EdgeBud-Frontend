@@ -24,7 +24,7 @@
                     <div eb-signup-form eb-form-type="INTRO_INLINE_1"/>
                 </div>
                 <div ng-switch-when="false">
-                    <div eb-account-completeness/>
+                    <div ng-include src="'/app/views/account/account-statistics.html'"></div>
                 </div>
                 <div ng-switch-default>
                     <!-- Nothing shown by default to prevent blinking when ng-switching the views -->
