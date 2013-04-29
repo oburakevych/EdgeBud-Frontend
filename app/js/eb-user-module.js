@@ -31,7 +31,7 @@ ebUserModule.factory('SecurityService', function($http, $rootScope, $cookieStore
 					}).error(function(data) {
 						console.warn('Signup failed: ' + data);
 						if ($scope) {
-							$scope.authorisationFailed = data;
+							$scope.authorisationFailed = 'Invalid e-mail or password. Try to login.';
 						}
 
 						if (errorFn) {
@@ -62,7 +62,7 @@ ebUserModule.factory('SecurityService', function($http, $rootScope, $cookieStore
 					}).error(function(data) {
 						console.warn('Authorisation failed: ' + data);
 						if ($scope) {
-							$scope.authorisationFailed = data;
+							$scope.authorisationFailed = 'This email address is already registered.';
 						}
 
 						if (errorFn) {
