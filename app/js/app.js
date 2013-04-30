@@ -12,15 +12,15 @@ var edgeBudModule = angular.module('edgeBudApp',
 		 'ebDialogModule',
 		 'ebAccountModule']
 );
-/* LOCALHOST
+/* LOCALHOST */
 edgeBudModule.constant("BASE_URL_BACKEND","http://localhost\\:8680/livestormer-backend"); //For $resource
 edgeBudModule.BASE_URL_BACKEND = 'http://localhost\:8680/livestormer-backend'; // For $http
-*/
 
-// REMOTE SERVER beta.livestormer.com
+
+/* REMOTE SERVER beta.livestormer.com
 edgeBudModule.constant("BASE_URL_BACKEND","http://beta.livestormer.com\\:8680/livestormer-backend"); //For $resource
 edgeBudModule.BASE_URL_BACKEND = 'http://beta.livestormer.com\:8680/livestormer-backend'; // For $http
-
+*/
 edgeBudModule.BASE_URL_DATA = 'data';
 
 edgeBudModule.config(['$routeProvider', function($routeProvider) {
@@ -29,6 +29,7 @@ edgeBudModule.config(['$routeProvider', function($routeProvider) {
 	  	  when('/projects', {templateUrl: 'views/projects.html'}).
 	  	  when('/projects/new', {templateUrl: 'views/add-project.html', controller: "ProjectController"}).
 	  	  when('/projects/:id', {templateUrl: 'views/project-live.html', controller: "ProjectDetailsController"}).
+		  when('/projects/:id/apply', {templateUrl: 'views/project-apply-form.html', controller: "ProjectDetailsController"}).
 	      when('/temp/', {templateUrl: 'views/project-live.html'}).
 	      otherwise({redirectTo: '/front-page'});
 	}]);
