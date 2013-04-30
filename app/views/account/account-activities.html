@@ -2,7 +2,7 @@
     <h4>Account Activities</h4>
     <p ng-show="false">No account activities yet</p>
     <div>
-        <div ng-repeat="activity in activities">
+        <div ng-repeat="activity in activities | limitTo:1">
             <p><span class="activity_date">{{getDate(activity.createdOnDate)}}</span></p>
             <p>{{activity.shortDescription}}</p>
         </div>
