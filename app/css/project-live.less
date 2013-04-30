@@ -38,12 +38,18 @@
 	.ongoing{
     	background-color: @focusColor;
     	
+    	.step_label{    	
+	    	color:white;
+	    	font-weight: bold;
+			font-size: 18px;
+			font-weight: bold;
+	    }
     }
-    .ongoing .step_label{    	
+
+    .done{
+    	background-color: @lightColor;
     	color:white;
-    	font-weight: bold;
-		font-size: 18px;
-		font-weight: bold;
+    	
     }
 }
 
@@ -77,6 +83,7 @@
 			background-color: @focusColor;
 			min-height: 200px;
 			padding: 15px;
+			margin-bottom: 30px;
 
 			.button_start {
 				text-align:center;
@@ -106,7 +113,6 @@
 
 		.discover_contribution{
 			text-align: center;
-			margin-top: 30px;
 		}
 
 		.fresh_entry{
@@ -148,6 +154,9 @@
 				text-align: center;
 				padding: 3px 15px;
 			}
+		}
+		.live_form{
+			color:red;
 		}
 	}
 }
