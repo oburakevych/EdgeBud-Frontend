@@ -1,16 +1,16 @@
-<div ng-controller="TopBannerController">
+<div ng-controller="TopBannerController" class="hero-unit hero_bg">
     <!-- When loogged out-->
-    <div class="hero-unit hero_bg" ng-show="showHero">
-        <div class="container hero_text">
-            <p class="hero_baseline_l1">The <span class="focus_1">smartest</span> way</p>
-            <p class="hero_baseline_l2">to start your own company</p>
-            <p class="hero_detail_l1">Help businesses to grow</p>
-            <p class="hero_detail_l2">... and win the right to reuse their innovations</p>
-        </div>
-    </div>
+	<div class="container hero_text" ng-show="showHero">
+		<p class="hero_baseline_l1">The <span class="focus_1">smartest</span> way</p>
+		<p class="hero_baseline_l2">to start your own company</p>
+		<p class="hero_detail_l1">Discover successful businesses</p>
+		<p class="hero_detail_l2">... and apply to develop a local branch</p>
+	</div>
     <!-- When loogged in-->
-    <div class="" ng-hide="showHero">
-
+    <div class="container hero_text" ng-hide="showHero">
+    	<p class="hero_baseline_l1">Your success begins <span class="focus_1">now</span></p>
+    	<p class="hero_detail_l1">- Screen business opportunities<P>
+		<p class="hero_detail_l2">- Bookmark it when it matches your skills</p>
     </div>
 </div>
 
