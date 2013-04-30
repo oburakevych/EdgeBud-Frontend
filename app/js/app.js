@@ -29,6 +29,7 @@ edgeBudModule.config(['$routeProvider', function($routeProvider) {
 	  	  when('/projects', {templateUrl: 'views/projects.html'}).
 	  	  when('/projects/new', {templateUrl: 'views/add-project.html', controller: "ProjectController"}).
 	  	  when('/projects/:id', {templateUrl: 'views/project-live.html', controller: "ProjectDetailsController"}).
+		  when('/projects/:id/apply', {templateUrl: 'views/project-apply-form.html', controller: "ProjectDetailsController"}).
 	      when('/temp/', {templateUrl: 'views/project-live.html'}).
 	      otherwise({redirectTo: '/front-page'});
 	}]);

@@ -306,8 +306,12 @@ function AccountCompletenessController($scope, $rootScope, $timeout, AccountComp
 			console.log("Get completeness");
 			AccountCompletenessTaskResource.get({accountId: $rootScope.authorisedAccount.id}, function(data) {
 				$scope.accountCompleteness = data;
+
+				if ($scope.completenessTimeoutPromise) {
+					$timeout.cancel($scope.completenessTimeoutPromise);
+				}
+				$scope.completenessTimeoutPromise = $timeout($scope.getAccountCompleteness, 4000, true);
 			});
-			$timeout($scope.getAccountCompleteness, 4000, true);
 		} else {
 			console.warn('User is not authorised properly');
 		}
