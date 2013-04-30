@@ -343,9 +343,16 @@ function AccountCompletenessController($scope, $rootScope, $timeout, AccountComp
 }
 
 function AccountActivitiesController($scope, $rootScope, $timeout, AccountResource) {
-	if ($rootScope.authorisedAccount && $rootScope.authorisedAccount.id) {
-		$scope.activities = AccountResource.getActivities({accountId: $rootScope.authorisedAccount.id});
+	$scope.getActivities = function() {
+		if ($rootScope.authorisedAccount && $rootScope.authorisedAccount.id) {
+			AccountResource.getActivities({accountId: $rootScope.authorisedAccount.id}, function(data) {
+				$scope.activities = data;
+				$timeout($scope.getActivities, 20000, true);
+			});
+		}
 	}
+
+	$scope.getActivities();
 
 	$scope.getDate = function(date) {
 		var formattedDate = moment(new Date(date));
