@@ -50,7 +50,7 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, S
 				//$timeout($scope.showLoginSignupDialog, 200, true);
 			}
 
-			$timeout(function() {$rootScope.autologinAttempted = true;}, 1400, true);
+			$timeout(function() {$rootScope.autologinAttempted = true;}, 1800, true);
 		}
 	}
 
@@ -193,23 +193,26 @@ function ProjectController($scope, $rootScope, UserActionResource, ProjectResour
 	}
 
 	$scope.bookmark = function() {
-		var bookmark = {
-			accountId: $rootScope.authorisedAccount.id,
-			objectType: 'OPPORTUNITY',
-			objectId: $scope.project.id
-		}
+		if ($rootScope.authorisedAccount && $rootScope.authorisedAccount.id) {
+			var bookmark = {
+				accountId: $rootScope.authorisedAccount.id,
+				objectType: 'OPPORTUNITY',
+				objectId: $scope.project.id
+			}
 
-		if ($scope.project.isBookmarked) {
-			$scope.project.isBookmarked = false;
-			AccountResource.removeBookmark(bookmark, function() {}, function() {
-				//ERROR
-				$scope.project.isBookmarked = true;
-			});
-		} else {
-			$scope.project.isBookmarked = true;
-			AccountResource.addBookmark(bookmark, function() {}, function() {
+			if ($scope.project.isBookmarked) {
 				$scope.project.isBookmarked = false;
-			});
+				AccountResource.removeBookmark(bookmark, function() {}, function() {
+					//ERROR
+					$scope.project.isBookmarked = true;
+				});
+			} else {
+				$scope.project.isBookmarked = true;
+				AccountResource.addBookmark(bookmark, function() {}, function() {
+					//Error
+					$scope.project.isBookmarked = false;
+				});
+			}
 		}
 	}
 
@@ -297,13 +300,20 @@ function TakeActionController($scope, $rootScope, UserActionResource, jqueryUI) 
 	}
 }
 
-function AccountCompletenessController($scope, $rootScope, AccountCompletenessTaskResource) {
-	if ($rootScope.authorisedAccount || $rootScope.authorisedAccount.id) {
-		console.log("Get completeness");
-		$scope.accountCompleteness = AccountCompletenessTaskResource.get({accountId: $rootScope.authorisedAccount.id});
-	} else {
-		console.warn('User is not authorised properly');
+function AccountCompletenessController($scope, $rootScope, $timeout, AccountCompletenessTaskResource) {
+	$scope.getAccountCompleteness = function() {
+		if ($rootScope.authorisedAccount && $rootScope.authorisedAccount.id) {
+			console.log("Get completeness");
+			AccountCompletenessTaskResource.get({accountId: $rootScope.authorisedAccount.id}, function(data) {
+				$scope.accountCompleteness = data;
+			});
+			$timeout($scope.getAccountCompleteness, 4000, true);
+		} else {
+			console.warn('User is not authorised properly');
+		}
 	}
+
+	$timeout($scope.getAccountCompleteness, 0, true);
 
 	$scope.getCompletenessClass = function(taskCompleteness) {
 		if (taskCompleteness.isCompleted) {
@@ -311,5 +321,13 @@ function AccountCompletenessController($scope, $rootScope, AccountCompletenessTa
 		} else{
 			return 'task-uncompleted';
 		}
+	}
+
+	$scope.getProgressWidth = function(rate) {
+		var style = {
+			width: "'" + rate + "%'"
+		}
+
+		return style;
 	}
 }
