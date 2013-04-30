@@ -306,7 +306,7 @@ function TakeActionController($scope, $rootScope, UserActionResource, jqueryUI) 
 	}
 }
 
-function AccountCompletenessController($scope, $rootScope, $timeout, AccountCompletenessTaskResource, AccountResource) {
+function AccountCompletenessController($scope, $rootScope, $timeout, AccountCompletenessTaskResource) {
 	$scope.getAccountCompleteness = function() {
 		if ($rootScope.authorisedAccount && $rootScope.authorisedAccount.id) {
 			console.log("Get completeness");
@@ -340,6 +340,10 @@ function AccountCompletenessController($scope, $rootScope, $timeout, AccountComp
 
 		return style;
 	}
+}
 
-	$scope.activities = AccountResource.getActivities({accountId: $rootScope.authorisedAccount.id});
+function AccountActivitiesController($scope, $rootScope, $timeout, AccountResource) {
+	if ($rootScope.authorisedAccount && $rootScope.authorisedAccount.id) {
+		$scope.activities = AccountResource.getActivities({accountId: $rootScope.authorisedAccount.id});
+	}
 }
