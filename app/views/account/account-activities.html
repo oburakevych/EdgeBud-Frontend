@@ -1,9 +1,9 @@
 <div class="eb_account_activities" ng-controller="AccountActivitiesController">
     <h4>Account Activities</h4>
-    <p>No account activities yet</p>
-    <div ng-show="false">
+    <p ng-show="false">No account activities yet</p>
+    <div>
         <div ng-repeat="activity in activities">
-            <p><span>{{activity.createdOnDate | date:'medium'}}</span> {{activity.shortDescription}}</p>
+            <p><span>{{getDate(activity.createdOnDate)}}</span> {{activity.shortDescription}}</p>
         </div>
     </div>
 

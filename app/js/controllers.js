@@ -346,4 +346,14 @@ function AccountActivitiesController($scope, $rootScope, $timeout, AccountResour
 	if ($rootScope.authorisedAccount && $rootScope.authorisedAccount.id) {
 		$scope.activities = AccountResource.getActivities({accountId: $rootScope.authorisedAccount.id});
 	}
+
+	$scope.getDate = function(date) {
+		var formattedDate = moment(new Date(date));
+
+		formattedDate = formattedDate.utc().startOf('minute').fromNow();
+
+		console.log("formattedDate: " + formattedDate);
+
+		return formattedDate;
+	}
 }
