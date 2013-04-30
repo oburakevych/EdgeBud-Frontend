@@ -25,7 +25,9 @@ ebAccountModule.factory('AccountResource', function($resource, BASE_URL_BACKEND)
 		{
 			'getBookmarks': {method: 'GET', url: BASE_URL_BACKEND + '/account/:accountId/bookmark', params: {accountId: '@accountId'}, isArray: true},
 			'addBookmark': {method: 'POST', url: BASE_URL_BACKEND + '/account/:accountId/bookmark', params: {accountId: '@accountId'}},
-			'removeBookmark': {method: 'DELETE', url: BASE_URL_BACKEND + '/account/:accountId/bookmark', params: {accountId: '@accountId', objectId: '@objectId', objectType: '@objectType'}}
+			'removeBookmark': {method: 'DELETE', url: BASE_URL_BACKEND + '/account/:accountId/bookmark', params: {accountId: '@accountId', objectId: '@objectId', objectType: '@objectType'}},
+
+			'getActivities': {method: 'GET', url: BASE_URL_BACKEND + '/account/:accountId/activity', params: {accountId: '@accountId'}, isArray: true}
 		});
 });
 

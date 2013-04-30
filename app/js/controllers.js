@@ -67,12 +67,18 @@ function UserSignupLoginController($scope, $rootScope, $cookieStore, $timeout, S
 		console.log("LoginSignupUserController: After user logged In");
 		$rootScope.showHero = false;
 	}
+
+	$scope.afterUserLoggedOut = function() {
+		console.log("LoginSignupUserController: After user logged Out");
+		$rootScope.showHero = true;
+	}
 	
 	$scope.$on('event:show-login-signup-dialog', function() {
 		$scope.showLoginSignupDialog();		
 	});
 
 	$scope.$on('event:after-user-logged-in', $scope.afterUserLoggedIn);
+	$scope.$on('event:after-user-logged-out', $scope.afterUserLoggedOut);
 
 	$timeout($scope.autoLogin, 0, true);
 } 
@@ -244,7 +250,7 @@ function ProjectController($scope, $rootScope, UserActionResource, ProjectResour
 function ProjectDetailsController($scope, $rootScope, $routeParams, ProjectResource, ProjectDetailsResource) {
 	$rootScope.showHero = false;
 	$scope.project = ProjectResource.get({projectId: $routeParams.id}, function() {
-		$scope.project.details = ProjectDetailsResource.get({projectId: $routeParams.id});
+		//$scope.project.details = ProjectDetailsResource.get({projectId: $routeParams.id});
 	});
 
 }
@@ -300,7 +306,7 @@ function TakeActionController($scope, $rootScope, UserActionResource, jqueryUI) 
 	}
 }
 
-function AccountCompletenessController($scope, $rootScope, $timeout, AccountCompletenessTaskResource) {
+function AccountCompletenessController($scope, $rootScope, $timeout, AccountCompletenessTaskResource, AccountResource) {
 	$scope.getAccountCompleteness = function() {
 		if ($rootScope.authorisedAccount && $rootScope.authorisedAccount.id) {
 			console.log("Get completeness");
@@ -334,4 +340,6 @@ function AccountCompletenessController($scope, $rootScope, $timeout, AccountComp
 
 		return style;
 	}
+
+	$scope.activities = AccountResource.getActivities({accountId: $rootScope.authorisedAccount.id});
 }

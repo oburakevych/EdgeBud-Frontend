@@ -80,6 +80,8 @@ ebUserModule.factory('SecurityService', function($http, $rootScope, $cookieStore
 			if ($cookieStore.get("EB_LOGGED_USER")) {
 				$cookieStore.remove("EB_LOGGED_USER");
 			}
+
+			$rootScope.$broadcast('event:after-user-logged-out');
 		}
 	}
 });
