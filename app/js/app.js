@@ -12,15 +12,15 @@ var edgeBudModule = angular.module('edgeBudApp',
 		 'ebDialogModule',
 		 'ebAccountModule']
 );
-/* LOCALHOST */
+/* LOCALHOST
 edgeBudModule.constant("BASE_URL_BACKEND","http://localhost\\:8680/livestormer-backend"); //For $resource
 edgeBudModule.BASE_URL_BACKEND = 'http://localhost\:8680/livestormer-backend'; // For $http
+*/
 
-
-/* REMOTE SERVER beta.livestormer.com
+/* REMOTE SERVER beta.livestormer.com */
 edgeBudModule.constant("BASE_URL_BACKEND","http://beta.livestormer.com\\:8680/livestormer-backend"); //For $resource
 edgeBudModule.BASE_URL_BACKEND = 'http://beta.livestormer.com\:8680/livestormer-backend'; // For $http
-*/
+
 edgeBudModule.BASE_URL_DATA = 'data';
 
 edgeBudModule.config(['$routeProvider', function($routeProvider) {
