@@ -18,8 +18,8 @@ edgeBudModule.BASE_URL_BACKEND = 'http://localhost\:8680/livestormer-backend'; /
 */
 
 /* REMOTE SERVER beta.livestormer.com */
-edgeBudModule.constant("BASE_URL_BACKEND","http://beta.livestormer.com\\:8680/livestormer-backend"); //For $resource
-edgeBudModule.BASE_URL_BACKEND = 'http://beta.livestormer.com\:8680/livestormer-backend'; // For $http
+edgeBudModule.constant("BASE_URL_BACKEND","http://beta.livestormer.com\\:8080/livestormer-backend"); //For $resource
+edgeBudModule.BASE_URL_BACKEND = 'http://beta.livestormer.com\:8080/livestormer-backend'; // For $http
 
 edgeBudModule.BASE_URL_DATA = 'data';
 
